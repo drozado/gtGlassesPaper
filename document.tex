@@ -1,37 +1,151 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+%\documentclass{article}
+\documentclass[10pt,a4paper]{article}
+\usepackage{fancyhdr}
+\usepackage[margin=2.5cm]{geometry}
+	\pagestyle{fancyplain}
+% header on first page
+		\fancyhf{}
+			\lhead{\fancyplain{Proceedings}}
+			\chead{}
+			\rhead{\fancyplain{ECEM 2013}}
+			\fancyfoot{} %please leave the footer blank
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\linespread{0.95}
+
+\title{Gaze supported hand gesture interaction with Robot in mobile situations} %Fill this in
+
+\date{} %keep date blank
+\author{First author(youremailadress@ecem.et)$^1$, Second author$^2$, Third author$^3$ \\ \\ %Fill in information for all authors here. Don't forget to include the email adress for the first author
+$^1$University of xxxx \\ 
+$^2$University of xxxx \\
+$^3$University of xxxx} %Fill in affiliation information for all authors here. 
+
 
 \begin{document}
+\maketitle%\begin{center}
 
-Gaze supported hand gesture interaction with Robot in mobile situations
+%\end{center}
+%---------------------------------------------------------------
+\textbf{
+\begin{center}
+Abstract 
+\end{center}
+}%the initial 200 words from the submission page should be copied and pasted here
+%---------------------------------------------------------------
+\noindent
+The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should ...
 
-\section{Abstract}
-\section{Introduction}
+
+%---------------------------------------------------------------
+\textbf{
+\begin{center}
+Introduction
+\end{center}
+}
+
 %We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and gaze in
 % a mobile situation for controlling a robot.
-\section{Related Work}
+
+
+
+
+%---------------------------------------------------------------
+\textbf{
+\begin{center}
+Method
+\end{center}
+}
+
+% ---------------------------------------------------------------
+\noindent The method section of the extended summary should include information about participants, apparatus,
+materials, procedure and analyses.
+At a maximum you may use two full pages. Use the predefined format of this template and do not change the format in any
+respect. For example, do not change the margins, font, font size, spacing between lines for either headers or text.
+All sections (method, results and conclusion) need to be considered. But you are free to choose how much text you want
+to include in each of these sections. If you are submitting a theoretical paper you may change the headers of the
+sections method and results to something more appropriate.
+If you need to include references in the extended summary they should follow APA standards and be included in full in
+the text in square brackets, e.g., [Author, X. (2000). My amazing paper. \emph{Journal of Amazingology}, 3(21), pp.
+1-2]. The extended summary is the basis for the reviewers. Notification of abstract acceptance for talks will be sent April 15
+2013. We cannot guarantee that we will respect the authors' preferences for oral or poster presentation. Some talks may
+be offered as poster presentations instead.
+
+
+
+\textbf{Related Work}
 %Related work on mobile gaze-based interaction, and hand gesture interaction with robot
-\section{Combining gaze and gesture}
-\subsection{Gaze for Interaction}
+\textbf{Combining gaze and gesture}
+\textbf{Gaze for Interaction}
 %methods and limitations
-\subsection{Gesture for Interaction}
+\textbf{Gesture for Interaction}
 %
-\subsection{Gaze enhansed interaction }
+\textbf{Gaze enhansed interaction }
 %Pehaps different methods or modes that has been studied in our case
-\section{Applications}
+\texbf{Applications}
 %Pehaps here we  can talk about different applications and then focued on our example in the next section
-\subsection{Experimental example}
-\subsubsection{}
+\textbf{Experimental example}
+\textbf{}
 %Hardware and softwares and the environment of our application
 
-\subsubsection{}
+\textbf{}
 %Different gestures, defining the method and steps
-\subsubsection{Results}
 
-\section{Conclusion}
 
-More plain text.
-\section{References}
+
+
+
+
+
+
+%---------------------------------------------------------------
+\textbf{
+\begin{center}
+Results
+\end{center}
+}
+%---------------------------------------------------------------
+\noindent
+The results section of the extended summary should include the results of your study. You may insert tables and figures. Table 1 illustrates the style of a table. The factors, conditions and values are fictive. The table caption should be located above the table. Do not insert more than one table and more than one figure.
+
+\begin{table}[\!ht]
+	\centering
+	\caption{This is a caption for the table}
+	\vskip 0.12in
+		\begin{tabular}{lcc}
+			\hline
+				& \multicolumn{2}{c}{Factor 2} \\
+					\cline{2-3}
+						Factor 1 & Condition A & Condition B \\
+						\hline
+						First  & 23(11) & 49(10) \\
+						Second   & 22(12)  & 12(15) \\
+						\hline
+		\end{tabular}
+	\label{ECEMtableTemplate}
+\end{table}
+
+For figures, use PNG, PSD, TIFF, BMP or JPG with a minimum resolution of 300 dpi. Figure 1 illustrates the style of a figure. The figure caption should be located below the figure.
+
+\begin{figure}[h]
+	\centering					\includegraphics[width=1.00\textwidth]{C:/ECEM.png}%Add file path and filenanme for your figure here
+	\caption{This is a caption for the figure}
+	\label{fig:ECEMfigureTemplate}
+\end{figure}
+
+%---------------------------------------------------------------
+\textbf{
+\begin{center}
+Conclusion
+\end{center}
+}
+%---------------------------------------------------------------
+\noindent
+The conclusion section should include your conclusions, e.g., your interpretation of the results in respect to theoretical and/or practical implications. 
 
 \end{document}
