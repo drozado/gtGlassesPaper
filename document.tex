@@ -30,8 +30,7 @@ $^3$University of xxxx} %Fill in affiliation information for all authors here.
 \begin{document}
 \maketitle%\begin{center}
 
-%\end{center}
-%---------------------------------------------------------------
+% \end{center} ---------------------------------------------------------------
 \textbf{
 \begin{center}
 Abstract 
@@ -39,7 +38,17 @@ Abstract
 }%the initial 200 words from the submission page should be copied and pasted here
 %---------------------------------------------------------------
 \noindent
-The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should ...
+
+The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you
+submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM
+2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be
+copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here.
+The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you
+submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM
+2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be
+copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here.
+The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you
+submitted at the ECEM 2013 website should ...
 
 
 %---------------------------------------------------------------
@@ -52,8 +61,38 @@ Introduction
 %We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and gaze in
 % a mobile situation for controlling a robot.
 
+In this work we present a head mounted eye tracker and a video-based hand gesture recognition engine that when
+combined can be used to interact with objects in the environment.
+
+I low-cost headmounted eye tracker can be built using off-the-shelf components.  The system consists of safety glasses,
+batteries, wireless eye camera and the wireless scene or field of view camera.
+
+The wireless eye camera and the associated software monitors the position of the pupil on the image and an infrared
+reflection in the iris. The vector difference between the pupil center and the glint reflection in the iris can be
+tracked during a calibration procedure to build a model of the user's gaze.
+
+The calibration procedure consists on the user looking at a number of points on the environment and marking them on
+the scene camera video stream while the user fixates on them.  Once a calibration procedure is completed, the gaze
+estimation algorithm is able to determining the point of regard of the user in the environment.
+
+We use the open-source Haytham \cite{} project developed by Diako Mardanbegui at the  IT University of Copenhagen for
+mobile gaze estimation  and extended it with a hand gesture recognition module that enables specific interaction with objects
+in the environment through gaze and hand gestures.
+
+The hand gesture recognition module is able to detect a hand in front of the scene camera and the number of fingers  it
+is holding up. We define the gesture as holding the hand  with a preset number of fingers holded up  for a predefined
+dwell time and moving it in a particular direction: up, down, left  or right. The hand gesture recognition worked well 
+for natural skin color, but using a latex glove of a given color improves performance.
+
+The system recognizes objects in the environment by detecting binary associated to them through the scene camera.
+
+To interact with an object in the environment, the user of the glasses needs to first look at the binary beacon that
+identifies the object and then performing the gesture. In this way, only that particular object in the environment 
+will react to the hand gesture.
 
 
+For demonstration purposes in the associated video \cite{}, the system is used to interact with a computer, a breadboard
+with a set of light emitting diodes and with a robot
 
 %---------------------------------------------------------------
 \textbf{
@@ -85,7 +124,7 @@ be offered as poster presentations instead.
 %methods and limitations
 \textbf{Gesture for Interaction}
 %
-\textbf{Gaze enhansed interaction }
+\textbf{Gaze enhanced interaction }
 %Pehaps different methods or modes that has been studied in our case
 \texbf{Applications}
 %Pehaps here we  can talk about different applications and then focued on our example in the next section
