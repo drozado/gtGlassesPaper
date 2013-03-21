@@ -18,13 +18,14 @@
 \usepackage[english]{babel}
 \linespread{0.95}
 
-\title{Gaze supported hand gesture interaction with Robot in mobile situations} %Fill this in
+\title{Interacting with Objects in the Environment by Gaze and Hand Gestures} %Fill this in
 
 \date{} %keep date blank
-\author{First author(youremailadress@ecem.et)$^1$, Second author$^2$, Third author$^3$ \\ \\ %Fill in information for all authors here. Don't forget to include the email adress for the first author
-$^1$University of xxxx \\ 
-$^2$University of xxxx \\
-$^3$University of xxxx} %Fill in affiliation information for all authors here. 
+\author{Jeremy Hales(jeremy.hales1@gmail.com)$^1$, Diako Mardanbeigi$^2$, David Rozado$^3$ \\ \\ %Fill in information
+% for all authors here. Don't forget to include the email adress for the first author
+$^1$University of Queensland - Department of Mechatronics \\ 
+$^2$IT University of Copenhagen\\
+$^3$ICT Centre - CSIRO} %Fill in affiliation information for all authors here. 
 
 
 \begin{document}
@@ -38,17 +39,15 @@ Abstract
 }%the initial 200 words from the submission page should be copied and pasted here
 %---------------------------------------------------------------
 \noindent
+Head-mounted eye trackers can be used for mobile gaze estimation. In this paper we use low-cost hardware to build a
+set of gaze tracking glasses and an open-source based gaze estimation algorithm that in combination with a video-based
+hand gesture recognition algorithm allows the user of the glasses to interact with objects in the environment through
+gaze and hand gestures. The system consists of glasses frame, eye tracking camera and field of view camera. The system 
+identifies objects in the environment through the field of view camera. Objects in the environment for potential
+interaction with, are marked with binary beacons. Through the field of view camera, the system can detect hand gestures
+and map them to specific objects for control purposes.
+%200 word abstract 
 
-The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you
-submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM
-2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be
-copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here.
-The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you
-submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM
-2013 website should be copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be
-copied and pasted here. The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here.
-The 200 word abstract you submitted at the ECEM 2013 website should be copied and pasted here. The 200 word abstract you
-submitted at the ECEM 2013 website should ...
 
 
 %---------------------------------------------------------------
@@ -58,31 +57,79 @@ Introduction
 \end{center}
 }
 
-%We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and gaze in
-% a mobile situation for controlling a robot.
+% We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and
+% gaze in a mobile situation for controlling a robot.
+Body language is an important way of communication among humans. In this work we present a head mounted eye tracker and
+a video-based hand gesture recognition engine that when combined can be used to interact with objects in the
+environment.
 
-In this work we present a head mounted eye tracker and a video-based hand gesture recognition engine that when
-combined can be used to interact with objects in the environment.
+Eyes are used by humans to obtain information about the surroundings and to communicate information. When something
+attracts our attention, we position our gaze on it, thus performing a \textit{fixation}. A fixation usually has a
+duration of at least 150 milliseconds (ms). The fast eye movements that occur between fixations are known as
+\textit{saccades}, and they are used to reposition the eye so that the object of interest is projected onto the fovea.
+The direction of gaze thus reflects the focus of \textit{attention} and also provides an indirect hint for
+\textit{intention} \cite{velichkovsky}.
 
-I low-cost headmounted eye tracker can be built using off-the-shelf components.  The system consists of safety glasses,
-batteries, wireless eye camera and the wireless scene or field of view camera.
 
-The wireless eye camera and the associated software monitors the position of the pupil on the image and an infrared
-reflection in the iris. The vector difference between the pupil center and the glint reflection in the iris can be
-tracked during a calibration procedure to build a model of the user's gaze.
+A video-based gaze tracking system seeks to find where a person is looking, i.e. the Point of Regard (PoR), using images
+obtained from the eye by one or more cameras. Most systems employ infrared illumination that is invisible to the human
+eye and hence it is not distracting for the user. Infrared light improves image contrast and produces a reflection on
+the cornea, known as corneal reflection or glint. Eye features such as the corneal reflections and the center of the
+pupil/iris can be used to estimate the PoR. Figure \ref{screenGazeTracker} shows a screenshot of an eye being tracked by
+the open-source ITU Gaze Tracker \cite{lowcostitugazetracker,Rozado2012}. In this case, the center of the pupil and two
+corneal reflections are the features being tracked.
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.5\textwidth, height=40mm]{figures/screenGazeTracker.jpg}
+\vspace{-3mm}
+\end{center}
+\caption{\textbf{The Open Source ITU Gaze Tracker Tracking One Eye.} The
+features tracked in the image are the pupil center and two corneal reflections. These features are used by the gaze 
+estimation algorithms to determinine the PoR of the user on the screen.}
+\label{screenGazeTracker}
+\end{figure}
+
+Depending on the hardware configuration of the different components, gaze tracking systems can be classified as either
+\textit{remote} or \textit{head-mounted}. In remote systems, the camera and the light sources are detached from the
+user, normally around the device screen, whereas in head-mounted systems the components are placed on the user's head, usually
+mounted on a helmet or a pair of safety glasses \cite{lowcostitugazetracker}.
+
+Head-mounted eye trackers can be used for mobile interaction as well as gaze estimation purposes.
+In this work, we have build a low-cost headmounted eye tracker using off-the-shelf components.  The system consists of
+safety glasses, batteries, wireless eye camera and the wireless scene or field of view camera. The wireless eye camera
+and the associated software monitors the position of the pupil on the image and an infrared reflection in the iris. The
+vector difference between the pupil center and the glint reflection in the iris can be tracked during a calibration
+procedure to build a model of the user's gaze.
 
 The calibration procedure consists on the user looking at a number of points on the environment and marking them on
 the scene camera video stream while the user fixates on them.  Once a calibration procedure is completed, the gaze
 estimation algorithm is able to determining the point of regard of the user in the environment.
 
-We use the open-source Haytham \cite{} project developed by Diako Mardanbegui at the  IT University of Copenhagen for
-mobile gaze estimation  and extended it with a hand gesture recognition module that enables specific interaction with objects
-in the environment through gaze and hand gestures.
+We use the open-source Haytham \cite{Mardanbegi2011} software developed by Diako Mardanbegui at the IT University of
+Copenhagen for mobile gaze estimation and extended it with a hand gesture recognition module that enables specific
+interaction with objects in the environment through gaze and hand gestures.
 
-The hand gesture recognition module is able to detect a hand in front of the scene camera and the number of fingers  it
-is holding up. We define the gesture as holding the hand  with a preset number of fingers holded up  for a predefined
-dwell time and moving it in a particular direction: up, down, left  or right. The hand gesture recognition worked well 
-for natural skin color, but using a latex glove of a given color improves performance.
+Gesture recognition is a topic in computer science and language technology with the goal of interpreting human gestures
+via mathematical algorithms. Gestures can originate from any bodily motion or state but commonly originate from the face
+or hand.
+
+An appealing feature of gestural interfaces is that they make possible for users to communicate with objects
+without need for external control devices. Hand gestures are an obvious choice as a mechanism to interact with objects
+in the environment. 
+
+Automated hand gesture recognition is challenging since in order for such an approach to represent a serious alternative
+to conventional input devices applications based on computer vision should be able to work successfully under
+uncontrolled light conditions, no matter what kind of background the user stands in front of. In addition, deformable
+and articulated objects like hands represent additional difficulty both for segmentation and shape recognition
+purposes.
+
+The hand gesture recognition module we develop here is able to detect a hand in front of the scene camera of the gaze
+tracking glasses and it is also able to detect the number of fingers that the hand is holding up. We define the gesture
+as holding the hand with a preset number of fingers hold up  for a predefined dwell time and moving it in a particular
+direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a
+given color improves performance.
 
 The system recognizes objects in the environment by detecting binary associated to them through the scene camera.
 
@@ -90,9 +137,6 @@ To interact with an object in the environment, the user of the glasses needs to 
 identifies the object and then performing the gesture. In this way, only that particular object in the environment 
 will react to the hand gesture.
 
-
-For demonstration purposes in the associated video \cite{}, the system is used to interact with a computer, a breadboard
-with a set of light emitting diodes and with a robot
 
 %---------------------------------------------------------------
 \textbf{
@@ -118,6 +162,9 @@ be offered as poster presentations instead.
 
 
 \textbf{Related Work}
+
+
+
 %Related work on mobile gaze-based interaction, and hand gesture interaction with robot
 \textbf{Combining gaze and gesture}
 \textbf{Gaze for Interaction}
@@ -129,29 +176,25 @@ Point to demo video: \url{http://www.youtube.com/watch?v=tBOfvZboGfk}
 %Pehaps different methods or modes that has been studied in our case
 \texbf{Applications}
 %Pehaps here we  can talk about different applications and then focued on our example in the next section
-\textbf{Experimental example}
-\textbf{}
-%Hardware and softwares and the environment of our application
-
-\textbf{}
-%Different gestures, defining the method and steps
-
-
-
-
-
 
 
 
 %---------------------------------------------------------------
 \textbf{
 \begin{center}
-Results
+Experimental Example
 \end{center}
 }
-%---------------------------------------------------------------
-\noindent
-The results section of the extended summary should include the results of your study. You may insert tables and figures. Table 1 illustrates the style of a table. The factors, conditions and values are fictive. The table caption should be located above the table. Do not insert more than one table and more than one figure.
+
+For demonstration purposes, in the associated video \cite{gazetrackinglassesandhandgesturerecognitionVideo}, the system
+presented here is used to interact with a computer, a breadboard with a set of light emitting diodes and with a robot
+
+
+\textbf{}
+%Hardware and softwares and the environment of our application
+
+\textbf{}
+%Different gestures, defining the method and steps
 
 \begin{table}[\!ht]
 	\centering
@@ -186,6 +229,17 @@ Conclusion
 }
 %---------------------------------------------------------------
 \noindent
-The conclusion section should include your conclusions, e.g., your interpretation of the results in respect to theoretical and/or practical implications. 
+In this work we have shown how to interact with objects in the environment through an innovative combination of
+gaze and hand gestures. The method is easily extendable to multiple objects in the environment and a wide array of hand
+gestures. The low-cost headmounted eye tracker does not compensate for parallax error, inability to differentiate
+between the working plane and the calibration plane, and these can limit interaction with objects at a distance and
+objects up close. We have tested the system  for interacting with a computer,  a breadboard and a mobile robot.
+This work has demonstrated the feasibility of the approach as well as its usefulness.
+
+
+\bibliographystyle{ieeetr}
+\bibliography{library}
+
+
 
 \end{document}
