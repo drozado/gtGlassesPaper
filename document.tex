@@ -1,62 +1,67 @@
-%\documentclass{article}
-\documentclass[10pt,a4paper]{article}
+\documentclass[jou,a4paper,notxfonts]{apa}
+\usepackage{graphicx} 
+\usepackage{palatino}
 \usepackage{fancyhdr}
-\usepackage[margin=2.5cm]{geometry}
-	\pagestyle{fancyplain}
+\pagestyle{fancy}
+
 % header on first page
-		\fancyhf{}
-			\lhead{\fancyplain{Proceedings}}
-			\chead{}
-			\rhead{\fancyplain{ECEM 2013}}
-			\fancyfoot{} %please leave the footer blank
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{\small
+Journal of Eye Movement Research\\
+1(1):1, 1-2}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\usepackage{color}
-\usepackage{subfigure}
-\usepackage{graphicx}
-\usepackage{mathptmx}
-\usepackage{multirow}
-\usepackage[english]{babel}
-\linespread{0.95}
+\renewcommand{\footrulewidth}{0pt}}
+
 
 \title{Interacting with Objects in the Environment by Gaze and Hand Gestures} %Fill this in
 
-\date{} %keep date blank
-\author{Jeremy Hales(jeremy.hales1@gmail.com)$^1$, Diako Mardanbeigi$^2$, David Rozado$^3$ \\ \\ %Fill in information
-% for all authors here. Don't forget to include the email adress for the first author
-$^1$University of Queensland - Department of Mechatronics \\ 
-$^2$IT University of Copenhagen\\
-$^3$ICT Centre - CSIRO} %Fill in affiliation information for all authors here. 
+\threeauthors{Author 1}{Author 2}{Author 3}
+\threeaffiliations{University of Queensland}{IT University of Copenhagen}{CSIRO ICT Centre}
+
+\journal{}
+\volume{}
+
+
+\abstract{Head-mounted gaze trackers can be used for gaze estimation purposes in mobile scenarios. A wireless gaze
+tracker in the form of gaze tracking glasses permits the continuous monitoring of a subject's point of regard on the
+surrounding 3D environment. In this work, we combine gaze tracking and hand gesture recognition to allow a subject to
+interact with objects in the environment by gazing at them, pointing part, and generating a hand gesture command,
+control part. We use low-cost hardware to build a set of gaze tracking glasses consisting of glasses frame, eye tracking
+camera and field of view camera. We also use a binary beacon recognition library to identify objects in the environment,
+a hand gesture classification algorithm to generate control commands and an open source gaze estimation algorithm to
+obtain the user's gaze coordinates. When combining all these elements, the emerging system permits a subject to move
+around the environment, positions his gaze in an object he want to interact with, and transmit a control command by
+performing a hand gesture. The specific object is identified by the binary beacon visible in its surface. This
+innovative HCI paradigm opens up new forms of interaction with objects in an smart environment.
+% 200 word abstract
+\linebreak \linebreak {\bf Keywords: Gaze Tracking Glasses, Mobile Interaction, Gaze Interaction, HCI}}
+
+\acknowledgements{}
+\shorttitle{Interacting with Objects in the Environment by Gaze and Hand Gestures}
+\rightheader{}
+
+% repeat the authors here (use et al if more than three authors):
+\leftheader{Author 1, Author 2, Author 3}
+
+
 
 
 \begin{document}
 \maketitle%\begin{center}
 
-% \end{center} ---------------------------------------------------------------
-\textbf{
-\begin{center}
-Abstract 
-\end{center}
-}%the initial 200 words from the submission page should be copied and pasted here
-%---------------------------------------------------------------
-\noindent
-Head-mounted eye trackers can be used for mobile gaze estimation. In this paper we use low-cost hardware to build a
-set of gaze tracking glasses and an open-source based gaze estimation algorithm that in combination with a video-based
-hand gesture recognition algorithm allows the user of the glasses to interact with objects in the environment through
-gaze and hand gestures. The system consists of glasses frame, eye tracking camera and field of view camera. The system 
-identifies objects in the environment through the field of view camera. Objects in the environment for potential
-interaction with, are marked with binary beacons. Through the field of view camera, the system can detect hand gestures
-and map them to specific objects for control purposes.
-%200 word abstract 
-
-
-
-%---------------------------------------------------------------
-\textbf{
-\begin{center}
-Introduction
-\end{center}
+\lhead{\small
+Journal of Eye Movement Research\\
+1(1):1, 1-2
 }
+\rhead{
+Hales, J., Mardanbeigi, D., & Rozado, D. (2013)\\
+Interacting with Objects in the Environment by Gaze and Hand Gestures
+}
+\thispagestyle{plain}
 
+\section{Introduction} 
 % We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and
 % gaze in a mobile situation for controlling a robot.
 Body language is an important way of communication among humans. In this work we present a head mounted eye tracker and
@@ -79,16 +84,14 @@ pupil/iris can be used to estimate the PoR. Figure \ref{screenGazeTracker} shows
 the open-source ITU Gaze Tracker \cite{lowcostitugazetracker,Rozado2012}. In this case, the center of the pupil and two
 corneal reflections are the features being tracked.
 
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=0.5\textwidth, height=40mm]{figures/screenGazeTracker.jpg}
-\vspace{-3mm}
-\end{center}
-\caption{\textbf{The Open Source ITU Gaze Tracker Tracking One Eye.} The
+%How to insert a figure (image):
+\begin{figure}[tp]
+ \fitbitmap{figures/screenGazeTracker.jpg}
+ \caption{\textbf{The Open Source ITU Gaze Tracker Tracking One Eye.} The
 features tracked in the image are the pupil center and two corneal reflections. These features are used by the gaze 
 estimation algorithms to determinine the PoR of the user on the screen.}
-\label{screenGazeTracker}
+ % the label is used to put refrences to this figure in the text
+ \label{screenGazeTracker}
 \end{figure}
 
 Depending on the hardware configuration of the different components, gaze tracking systems can be classified as either
@@ -138,12 +141,7 @@ identifies the object and then performing the gesture. In this way, only that pa
 will react to the hand gesture.
 
 
-%---------------------------------------------------------------
-\textbf{
-\begin{center}
-Method
-\end{center}
-}
+\section{Method}
 
 Constructing the eye tracking glasses:
 
@@ -191,74 +189,32 @@ be offered as poster presentations instead.
 
 
 
-\textbf{Related Work}
+\subsection{Related Work}
 
 
 
 %Related work on mobile gaze-based interaction, and hand gesture interaction with robot
-\textbf{Combining gaze and gesture}
-\textbf{Gaze for Interaction}
+\subsubsection{Combining gaze and gesture}
+\subsubsection{Gaze for Interaction}
 Point to demo video: \url{http://www.youtube.com/watch?v=tBOfvZboGfk}
 %methods and limitations
-\textbf{Gesture for Interaction}
+\subsubsection{Gesture for Interaction}
 %
-\textbf{Gaze enhanced interaction }
+\subsubsection{Gaze enhanced interaction }
 %Pehaps different methods or modes that has been studied in our case
-\texbf{Applications}
+\subsubsection{Applications}
 %Pehaps here we  can talk about different applications and then focued on our example in the next section
 
+\section{Results}
 
 
 %---------------------------------------------------------------
-\textbf{
-\begin{center}
-Experimental Example
-\end{center}
-}
+\section{Discussion}
 
 For demonstration purposes, in the associated video \cite{gazetrackinglassesandhandgesturerecognitionVideo}, the system
 presented here is used to interact with a computer, a breadboard with a set of light emitting diodes and with a robot
 
 
-\textbf{}
-%Hardware and softwares and the environment of our application
-
-\textbf{}
-%Different gestures, defining the method and steps
-
-\begin{table}[\!ht]
-	\centering
-	\caption{This is a caption for the table}
-	\vskip 0.12in
-		\begin{tabular}{lcc}
-			\hline
-				& \multicolumn{2}{c}{Factor 2} \\
-					\cline{2-3}
-						Factor 1 & Condition A & Condition B \\
-						\hline
-						First  & 23(11) & 49(10) \\
-						Second   & 22(12)  & 12(15) \\
-						\hline
-		\end{tabular}
-	\label{ECEMtableTemplate}
-\end{table}
-
-For figures, use PNG, PSD, TIFF, BMP or JPG with a minimum resolution of 300 dpi. Figure 1 illustrates the style of a figure. The figure caption should be located below the figure.
-
-\begin{figure}[h]
-	\centering					\includegraphics[width=1.00\textwidth]{C:/ECEM.png}%Add file path and filenanme for your figure here
-	\caption{This is a caption for the figure}
-	\label{fig:ECEMfigureTemplate}
-\end{figure}
-
-%---------------------------------------------------------------
-\textbf{
-\begin{center}
-Conclusion
-\end{center}
-}
-%---------------------------------------------------------------
-\noindent
 In this work we have shown how to interact with objects in the environment through an innovative combination of
 gaze and hand gestures. The method is easily extendable to multiple objects in the environment and a wide array of hand
 gestures. The low-cost headmounted eye tracker does not compensate for parallax error, inability to differentiate
@@ -267,9 +223,7 @@ objects up close. We have tested the system  for interacting with a computer,  a
 This work has demonstrated the feasibility of the approach as well as its usefulness.
 
 
-\bibliographystyle{ieeetr}
 \bibliography{library}
-
 
 
 \end{document}
