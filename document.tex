@@ -33,13 +33,13 @@ control part. We use low-cost hardware to build a set of gaze tracking glasses c
 camera and field of view camera. We also use a binary beacon recognition library to identify objects in the environment,
 a hand gesture classification algorithm to generate control commands and an open source gaze estimation algorithm to
 obtain the user's gaze coordinates. When combining all these elements, the emerging system permits a subject to move
-around the environment, positions his gaze in an object he want to interact with, and transmit a control command by
+freely in an environment, positions his gaze in an object he want to interact with, and transmit a control command by
 performing a hand gesture. The specific object is identified by the binary beacon visible in its surface. This
 innovative HCI paradigm opens up new forms of interaction with objects in an smart environment.
 % 200 word abstract
 \linebreak \linebreak {\bf Keywords: Gaze Tracking Glasses, Mobile Interaction, Gaze Interaction, HCI}}
-
 \acknowledgements{}
+
 \shorttitle{Interacting with Objects in the Environment by Gaze and Hand Gestures}
 \rightheader{}
 
@@ -57,7 +57,7 @@ Journal of Eye Movement Research\\
 1(1):1, 1-2
 }
 \rhead{
-Hales, J., Mardanbeigi, D., & Rozado, D. (2013)\\
+One, A., Two, A., & Three, A. (2013)\\
 Interacting with Objects in the Environment by Gaze and Hand Gestures
 }
 \thispagestyle{plain}
@@ -65,10 +65,60 @@ Interacting with Objects in the Environment by Gaze and Hand Gestures
 \section{Introduction} 
 % We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and
 % gaze in a mobile situation for controlling a robot.
-Body language is an important way of communication among humans. In this work we present a head mounted eye tracker and
-a video-based hand gesture recognition engine that when combined can be used to interact with objects in the
-environment.
+Body language and gaze are important forms of communication among humans. In this work we present a system that combines
+gaze pointing and hand gestures to interact with objects in the environment. Our system merges a video-based gaze 
+tracker, a hand gesture classifier and a visual marker recognition module into an innovate HCI device that permits novel 
+forms of interaction with the environment. Gaze is used as a pointing mechanism to select the object with which the 
+subject want to interact. A visual binary marker in the surface of the object is used for identification purposes by
+the system. Finally, a hand gesture is mapped to a specific control command that makes the object carry out a particular
+function.
 
+
+
+
+Gesture recognition is a topic in computer science and language technology with the goal of interpreting human gestures
+via mathematical algorithms. Gestures can originate from any bodily motion or state but commonly originate from the face
+or hand.
+
+An appealing feature of gestural interfaces is that they make possible for users to communicate with objects
+without need for external control devices. Hand gestures are an obvious choice as a mechanism to interact with objects
+in the environment. 
+
+Automated hand gesture recognition is challenging since in order for such an approach to represent a serious alternative
+to conventional input devices applications based on computer vision should be able to work successfully under
+uncontrolled light conditions, no matter what kind of background the user stands in front of. In addition, deformable
+and articulated objects like hands represent additional difficulty both for segmentation and shape recognition
+purposes.
+
+The hand gesture recognition module we develop here is able to detect a hand in front of the scene camera of the gaze
+tracking glasses and it is also able to detect the number of fingers that the hand is holding up. We define the gesture
+as holding the hand with a preset number of fingers hold up  for a predefined dwell time and moving it in a particular
+direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a
+given color improves performance.
+
+The system recognizes objects in the environment by detecting binary associated to them through the scene camera.
+
+To interact with an object in the environment, the user of the glasses needs to first look at the binary beacon that
+identifies the object and then performing the gesture. In this way, only that particular object in the environment 
+will react to the hand gesture.
+
+
+\subsection{Related Work}
+
+%Related work on mobile gaze-based interaction, and hand gesture interaction with robot
+\subsection{Head mounted eye trackers}
+\subsection{Gaze for Interaction}
+\subsection{Gestures in HCI}
+\subsection{Combining gaze and gesture}
+%methods and limitations
+\subsubsection{Gesture for Interaction}
+%
+\subsubsection{Gaze enhanced interaction }
+%Pehaps different methods or modes that has been studied in our case
+
+\section{Method}
+
+\subsection{Gaze Tracking}
 Eyes are used by humans to obtain information about the surroundings and to communicate information. When something
 attracts our attention, we position our gaze on it, thus performing a \textit{fixation}. A fixation usually has a
 duration of at least 150 milliseconds (ms). The fast eye movements that occur between fixations are known as
@@ -111,40 +161,11 @@ The calibration procedure consists on the user looking at a number of points on 
 the scene camera video stream while the user fixates on them.  Once a calibration procedure is completed, the gaze
 estimation algorithm is able to determining the point of regard of the user in the environment.
 
-We use the open-source Haytham \cite{Mardanbegi2011} software developed by Diako Mardanbegui at the IT University of
+We use the open-source Haytham \cite{Mardanbegi2011} gaze tracker developed by Diako Mardanbegui at the IT University of
 Copenhagen for mobile gaze estimation and extended it with a hand gesture recognition module that enables specific
 interaction with objects in the environment through gaze and hand gestures.
 
-Gesture recognition is a topic in computer science and language technology with the goal of interpreting human gestures
-via mathematical algorithms. Gestures can originate from any bodily motion or state but commonly originate from the face
-or hand.
-
-An appealing feature of gestural interfaces is that they make possible for users to communicate with objects
-without need for external control devices. Hand gestures are an obvious choice as a mechanism to interact with objects
-in the environment. 
-
-Automated hand gesture recognition is challenging since in order for such an approach to represent a serious alternative
-to conventional input devices applications based on computer vision should be able to work successfully under
-uncontrolled light conditions, no matter what kind of background the user stands in front of. In addition, deformable
-and articulated objects like hands represent additional difficulty both for segmentation and shape recognition
-purposes.
-
-The hand gesture recognition module we develop here is able to detect a hand in front of the scene camera of the gaze
-tracking glasses and it is also able to detect the number of fingers that the hand is holding up. We define the gesture
-as holding the hand with a preset number of fingers hold up  for a predefined dwell time and moving it in a particular
-direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a
-given color improves performance.
-
-The system recognizes objects in the environment by detecting binary associated to them through the scene camera.
-
-To interact with an object in the environment, the user of the glasses needs to first look at the binary beacon that
-identifies the object and then performing the gesture. In this way, only that particular object in the environment 
-will react to the hand gesture.
-
-
-\section{Method}
-
-Constructing the eye tracking glasses:
+\subsection{Constructing the eye tracking glasses}
 
 Materials:
 Plastic safety glasses
@@ -188,25 +209,13 @@ the text in square brackets, e.g., [Author, X. (2000). My amazing paper. \emph{J
 2013. We cannot guarantee that we will respect the authors' preferences for oral or poster presentation. Some talks may
 be offered as poster presentations instead.
 
+\subsection{Visual Markers Recognition}
+\subsection{Hand Gesture Recognition}
+\subsection{Putting it all together}
 
 
-\subsection{Related Work}
-
-
-
-%Related work on mobile gaze-based interaction, and hand gesture interaction with robot
-\subsubsection{Combining gaze and gesture}
-\subsubsection{Gaze for Interaction}
+\section{Application}
 Point to demo video: \url{http://www.youtube.com/watch?v=tBOfvZboGfk}
-%methods and limitations
-\subsubsection{Gesture for Interaction}
-%
-\subsubsection{Gaze enhanced interaction }
-%Pehaps different methods or modes that has been studied in our case
-\subsubsection{Applications}
-%Pehaps here we  can talk about different applications and then focued on our example in the next section
-
-\section{Results}
 
 
 %---------------------------------------------------------------
