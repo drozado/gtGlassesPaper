@@ -73,16 +73,18 @@ subject want to interact. A visual binary marker in the surface of the object is
 the system. Finally, a hand gesture is mapped to a specific control command that makes the object carry out a particular
 function.
 
+Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of gaze
+(where one is looking). A head mounted eye tracker is a device that permits measuring eye movement while the subject is
+moving around an environment. Eye trackers are used in research on the visual system, in psychology, in cognitive
+linguistics and in product design. There are a number of methods for measuring eye movement. The most popular variant
+uses video images from which the eye position is extracted. Other methods use search coils or are based on the
+electrooculogram.
 
-
-
-Gesture recognition is a topic in computer science and language technology with the goal of interpreting human gestures
-via mathematical algorithms. Gestures can originate from any bodily motion or state but commonly originate from the face
-or hand.
-
-An appealing feature of gestural interfaces is that they make possible for users to communicate with objects
-without need for external control devices. Hand gestures are an obvious choice as a mechanism to interact with objects
-in the environment. 
+Automatic gesture recognition is a topic in computer science and language technology that strives to interpret human
+gestures via computational algorithms. Gestures can originate from any bodily motion or state but commonly originate
+from the face or hands. An appealing feature of gestural interfaces is that they make it possible for users to communicate
+with objects without need for external control devices. Hand gestures are an obvious choice as a mechanism to interact
+with objects in the environment.
 
 Automated hand gesture recognition is challenging since in order for such an approach to represent a serious alternative
 to conventional input devices applications based on computer vision should be able to work successfully under
@@ -90,18 +92,34 @@ uncontrolled light conditions, no matter what kind of background the user stands
 and articulated objects like hands represent additional difficulty both for segmentation and shape recognition
 purposes.
 
+Visual marker system consists of a set of patterns that can be detected by a computer equipped
+with a camera and an appropriate detection algorithm \cite{middel19detection}. Markers placed in the environment
+provide easily detectable visual cues for object detection in the environment. In this work, we use the open source
+library XXXXXXXXXXXXXXXXX FOR DIAKO TO FILL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. This library provides our system with
+the ability to recognize specific objects in the environment.
+
+
 The hand gesture recognition module we develop here is able to detect a hand in front of the scene camera of the gaze
 tracking glasses and it is also able to detect the number of fingers that the hand is holding up. We define the gesture
 as holding the hand with a preset number of fingers hold up  for a predefined dwell time and moving it in a particular
-direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a
-given color improves performance.
+direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex
+glove of a given color improves performance.
 
-The system recognizes objects in the environment by detecting binary associated to them through the scene camera.
+
+Haytham provides real-time gaze estimation in the user’s field of view or in the computer display by analyzing eye movement.
+ 
+The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera.
 
 To interact with an object in the environment, the user of the glasses needs to first look at the binary beacon that
-identifies the object and then performing the gesture. In this way, only that particular object in the environment 
+identifies the object and then perform the gesture. In this way, only that particular object in the environment 
 will react to the hand gesture.
 
+
+In Summary, this work represents a proof of concept for an innovative form of interacting with objects in the environment
+through gaze and hand gestures. The off-the-shelf components used to build the hardware, the low cost of building the
+entire system and the open source nature of the algorithms used, make this form of interaction amenable for spreading
+among academic institutions and research labs to further investigate and stretch the possibilities of the innovative
+HCI paradigm.
 
 \subsection{Related Work}
 
@@ -196,18 +214,8 @@ It was found that the best position of the eye is below the glasses so it doesn'
 
 
 % ---------------------------------------------------------------
-\noindent The method section of the extended summary should include information about participants, apparatus,
-materials, procedure and analyses.
-At a maximum you may use two full pages. Use the predefined format of this template and do not change the format in any
-respect. For example, do not change the margins, font, font size, spacing between lines for either headers or text.
-All sections (method, results and conclusion) need to be considered. But you are free to choose how much text you want
-to include in each of these sections. If you are submitting a theoretical paper you may change the headers of the
-sections method and results to something more appropriate.
-If you need to include references in the extended summary they should follow APA standards and be included in full in
-the text in square brackets, e.g., [Author, X. (2000). My amazing paper. \emph{Journal of Amazingology}, 3(21), pp.
-1-2]. The extended summary is the basis for the reviewers. Notification of abstract acceptance for talks will be sent April 15
-2013. We cannot guarantee that we will respect the authors' preferences for oral or poster presentation. Some talks may
-be offered as poster presentations instead.
+\subsection{Gaze Tracking Glasses}
+%Maybe Diako should take care of this subsection
 
 \subsection{Visual Markers Recognition}
 \subsection{Hand Gesture Recognition}
@@ -231,6 +239,10 @@ gestures. The low-cost headmounted eye tracker does not compensate for parallax 
 between the working plane and the calibration plane, and these can limit interaction with objects at a distance and
 objects up close. We have tested the system  for interacting with a computer,  a breadboard and a mobile robot.
 This work has demonstrated the feasibility of the approach as well as its usefulness.
+
+
+-Problems with skin detection vs Gloves
+-Problems through lack of visual feedback (audio feedback as a substitute)
 
 
 \bibliography{library}
