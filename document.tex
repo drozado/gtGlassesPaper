@@ -243,6 +243,18 @@ are not unevenly balanced.
 It was found that the best position of the eye is below the glasses so it doesn't obstruct the user's vision. 
 8. The scene camera was mounted to the right of side of the glasses using sticky tape.
 
+Finger detection
+1. Scene camera feed is colour thresholded to check for skin colour or latex glove. For checking the skin colour the image is 
+converted to Ycc colour space. When checking for the latex glove the image is converted to HSV space.
+2. Blobs are cleaned up using morphological operations.
+3. The largest blob in the image is defined as the hand and all other blobs are discarded. If the blob is not above a certain area
+it is treated as noise and also removed from the image.
+4. The convexity hull of the blob is calculated using openCV's library.
+INSERT IMAGE HERE SHOWING CONVEXITY DEFECTS
+5. End and start points of the convexity defects are located.
+6. If the location of the end and start points satisfy the custom heuristic equation, the defect is defined as a finger.
+7. Each defect is checked and the number of fingers is therefore the total defects that satisfy the equation.
+
 % ---------------------------------------------------------------
 \subsection{Gaze Tracking Glasses}
 %Maybe Diako should take care of this subsection
