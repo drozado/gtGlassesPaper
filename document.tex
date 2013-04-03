@@ -28,16 +28,12 @@ Journal of Eye Movement Research\\
 \abstract{Head-mounted gaze trackers can be used for gaze estimation purposes in mobile scenarios. A wireless gaze
 tracker in the form of gaze tracking glasses permits the continuous monitoring of a subject's point of regard on the
 surrounding 3D environment. In this work, we combine gaze tracking and hand gesture recognition to allow a subject to
-interact with objects in the environment by gazing at them, pointing part, and generating a hand gesture command,
-control part. We use low-cost hardware to build a set of gaze tracking glasses consisting of glasses' frame, eye tracking
-camera and field of view or scene camera. We also use a binary beacon recognition library to identify objects in the environment,
-a hand gesture classification algorithm to recognize hand-based control commands and an open source gaze estimation algorithm to
-obtain the user's gaze coordinates. When combining all these elements, the emerging system permits a subject to move
-freely in an environment, select the object he wants to interact with by gaze, and transmit a control command to it by
-performing a hand gesture. The specific object is identified by the binary beacon visible in its surface. This
+interact with objects in the environment by gazing at them (pointing), and controlling the object using hand gesture commands. A set of gaze tracking glasses is made from low-cost hardware which consists of glasses' frame, eye tracking camera and the scene camera. An open source gaze estimation software is used for eye tracking and obtaining the user's gaze data. A binary beacon recognition library is used to identify objects in the environment. A hand gesture classification algorithm is used to recognize hand-based control commands. When combining all these elements, the emerging system permits a subject to move
+freely in an environment, select the object he wants to interact with by gaze, and transmit a control command to it by performing a hand gesture. The specific object is identified by the binary beacon visible in its surface. This
 innovative HCI paradigm opens up new forms of interaction with objects in an smart environment.
+
 % 200 word abstract
-\linebreak \linebreak {\bf Keywords: Gaze Tracking Glasses, Mobile Interaction, Gaze Interaction, HCI}}
+\linebreak \linebreak {\bf Keywords: Gaze Tracking, Head-Mounted Gaze Tracker, Mobile Interaction, Gaze Interaction, HCI}}
 \acknowledgements{}
 
 \shorttitle{Interacting with Objects in the Environment by Gaze and Hand Gestures}
@@ -73,7 +69,8 @@ object with which the subject wants to interact. A visual binary marker in the s
 identification of the object by the system. Finally, a hand gesture is mapped to a specific control command that makes the
 object carry out a particular function.
 
-Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of gaze
+% Diako: <the following paragraph about the eye tracking should be removed>
+Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of regard
 (where a person is looking). A head mounted eye tracker is a device that permits measuring eye movement while the
 subject is moving around an environment and estimate the position of gaze in the environment. Eye trackers are used in
 research on the visual system, in psychology, in cognitive linguistics, product design and in Human Computer Interaction
@@ -107,7 +104,7 @@ color not present in the environment improves performance.
 
 
 We used an open source gaze tracker, described in \cite{Mardanbegi2011}, to monitor user's gaze. The gaze tracker
-provides real-time gaze estimation over the user’s field of view, as captured by the scene camera attached to the glasses,
+provides real-time gaze estimation over the userï¿½s field of view, as captured by the scene camera attached to the glasses,
  
 
 The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera
