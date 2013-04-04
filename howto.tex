@@ -1,0 +1,182 @@
+\documentclass[jou,a4paper,notxfonts]{apa}
+\usepackage{graphicx} 
+\usepackage{palatino}
+\usepackage{verbatim} 
+\usepackage{url}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% header on first page
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{\small
+Journal of Eye Movement Research\\
+1(1):1, 1-2}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+	
+
+\title{How to Prepare your Manuscript for the
+Journal of Eye Movement Research}
+\threeauthors{Rudolf Groner}{Simon Raess}{Thomas Reber}
+\threeaffiliations{University of Bern}{University of Bern}{University of Bern}
+\journal{}
+\volume{}
+
+\abstract{This document is a template to be used to create a suitably formatted submission for the
+Journal of Eye Movement Research. It contains some instructions, style definitions, and
+explanatory text in conformance with fifth edition style of the American Psychological
+Association. Writing a paper for the Journal of Eye Movement Research may be different
+from what you are used to: The journal only accepts final manuscripts, which are formatted
+according to the style sheets defined in this template. To ensure a final product of high
+quality, we must receive your article in the appropriate file type and text format. The purpose
+of this documentation is to provide you with the information you need to produce a
+complete, well-formed submission to the Journal of Eye Movement Research.
+\\
+\\
+{\bf Keywords: Manuscript, template, guidelines, instruction, styles, format}}
+
+\shorttitle{Manuscript Submission}
+\rightheader{}
+\leftheader{}
+
+\begin{document}
+\maketitle
+
+\lhead{\small
+Journal of Eye Movement Research\\
+1(1):1, 1-2
+}
+\rhead{
+Groner, R., Raess, S., & Reber, T. (2007)\\
+Manuscript Submission
+}
+\thispagestyle{plain}
+
+\section{Manuscript Production} 
+\subsection{Manuscript Submission}
+For an initial submission, we need a legible PDF of the paper that includes all elements necessary for review (figures, references, and so forth). For the final submission, after the paper has been accepted, we need a final manuscript file that adheres to our standards for formatting and styles, as well as a separate file in appropriate format for each figure. The provided \LaTeX{}- template uses the apa and apacite packages. A comprehensive overview of the usage of the apa-package 
+is available at \url{http://www.ilsp.gr/homepages/protopapas/apacls.html} or at \url{http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/} for the apacite package. For proper header formatting the package fancyhdr needs to be installed also.
+\paragraph{}
+The apa-package allows simple conversion from a manuscript mode to a journal mode. Therefore we recommend to submit your paper using the manuscript mode. If your paper has been accepted, we will ask you to send us the revised document converted using the journal mode of the apa-package. 
+\subsection{Manuscript Template}
+\subsubsection{Create a new manuscript}Open the file \texttt{template.tex} in your preferred \LaTeX{} IDE or text editor
+and save the file under a new name. Install the apa and apacite packages, that can be found in the zip-file containing this template.
+For further illustration the \texttt{howto.tex} file (the source for the the document you are reading at the moment) is provided as well.
+\subsection{Manuscript Structure}
+Authors should organize their paper using the following
+structure:
+\newline
+
+       \begin{APAitemize}
+       
+        \item Title
+        \item Authors, Affiliations
+        \item Abstract (120 words maximum)
+        \item Introduction
+        \item Methods
+        \item Results
+        \item Discussion
+        \item Conclusion
+        \item Acknowledgements
+        \item Appendix (optional)
+        \item Refrences
+        
+       \end{APAitemize}
+
+\paragraph{}
+Theoretical and methodological articles as well as
+reviews and comments, may omit elements of this structure
+where appropriate.
+   
+
+\subsection{Style Guides}
+\subsubsection{Publication Manual}
+Please refer to the fifth edition of the Publication Manual published by the \citeA{apamanual}. The manual draws a
+sharp distinction between copy manuscripts, and final
+manuscripts. In order to prepare your manuscript for publication,
+please focus on chapter 6: ``Material Other Than
+Journal Article'' (pp. 321 - 330).
+\subsubsection{Concise Rules of APA-Style}
+The ``Concise Rules of APA Style'' \cite{apamanual2}
+targets only those rules writers need for choosing the best
+words and format for their articles:
+\begin{quotation}
+
+The Concise Rules offers a comprehensive list of essential
+writing standards in a convenient, easily retrievable
+format. It also provides suggestions for reducing
+bias in language; reviews the mechanics of
+style for punctuation, spelling, capitalization, abbreviation,
+italicization, headings, and quotations; examines
+the preferred use of numbers as well as standards
+for metrication and statistics; provides guidance for
+the construction and formatting of tables, figures, and
+appendixes; and offers clear examples and models for
+referencing ideas and constructing error-free reference
+lists.
+
+\end{quotation}
+
+\subsubsection{The Easy Way}
+\citeA{apamanual3} published
+an easy to read and very useful summary of the most
+important APA rules and guidelines.
+
+\subsection{Tables and Figures}
+\subsubsection{Tables}
+Table~\ref{tab:tab1} illustrates the style of a table. The
+factors, conditions and values are fictive.
+
+\begin{table}[h]
+ \caption{Some numbers that could be experimental data.}
+ \label{tab:tab1}
+ \begin{tabular}{lcc}\hline
+           & \multicolumn{2}{c}{Factor 2} \\ \cline{2-3}
+ Factor 1  & Condition A  & Condition B   \\ \hline
+ First     & 586 (231)    & 649 (255)     \\
+           &    2.2       &    7.5        \\
+ Second    & 590 (195)    & 623 (231)     \\
+           &    2.8       &    2.5        \\ \hline
+ \end{tabular}
+\end{table}
+\subsubsection{Figures}
+Preparing your graphics properly is an important
+step creating a complete and accurate submission.
+To achieve the highest quality in the final manuscript, it is
+vital that graphics be created properly and submitted in
+the correct format: 
+\newline
+
+       \begin{APAitemize}
+       
+        \item Edit charts and illustrations as vector graphics(PDF, EPS or AI).
+        \item Deliver rasterized images, like photos or screenshots, with a minimum resolution of 300dpi(PNG, PSD, TIFF, BMP or JPG).
+        \item Movies should be saved as QuickTime Videos(MOV) using H.264 codec.
+        
+       \end{APAitemize}
+\paragraph{}
+The follwing code exemplifies how to insert a graphic-file named {\tt{graph1.jpg}}:
+\begin{quote}
+\begin{verbatim}
+	\begin{figure}[tp]
+	  \fitbitmap{graph1}
+	  \caption{the caption...} 
+	  \label{fig:fig1}
+	\end{figure}
+\end{verbatim}
+\end{quote}
+\paragraph{}
+\section{Submit your manuscript}
+In order to submit a completed manuscript to the
+Journal of Eye Movement Research, go to:
+\begin{quote}
+\url{http://www.jemr.org/contribute/online_submission}
+\end{quote}
+and follow the instruction on the page.
+
+
+\bibliography{biblio}
+
+\end{document}

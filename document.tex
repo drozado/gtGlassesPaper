@@ -14,47 +14,44 @@ Journal of Eye Movement Research\\
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
+\title{Interacting with Objects in the Environment by Gaze and Hand Gestures}
 
+%please refer to http://www.ilsp.gr/homepages/protopapas/apacls.html#titlhead for different numbers of authors and affiliations
+\threeauthors{First Author}{Second Author}{Third Author}
+\threeaffiliations{First affiliation}{Second Affiliation}{Third Affiliation}
 
-\title{Interacting with Objects in the Environment by Gaze and Hand Gestures} %Fill this in
-
-\threeauthors{Author 1}{Author 2}{Author 3}
-\threeaffiliations{University of Queensland}{IT University of Copenhagen}{CSIRO ICT Centre}
 
 \journal{}
 \volume{}
 
-
-\abstract{Head-mounted gaze trackers can be used for gaze estimation purposes in mobile scenarios. A wireless gaze
+\abstract{
+Head-mounted gaze trackers can be used for gaze estimation purposes in mobile scenarios. A wireless gaze
 tracker in the form of gaze tracking glasses permits the continuous monitoring of a subject's point of regard on the
 surrounding 3D environment. In this work, we combine gaze tracking and hand gesture recognition to allow a subject to
 interact with objects in the environment by gazing at them (pointing), and controlling the object using hand gesture commands. A set of gaze tracking glasses is made from low-cost hardware which consists of glasses' frame, eye tracking camera and the scene camera. An open source gaze estimation software is used for eye tracking and obtaining the user's gaze data. A binary beacon recognition library is used to identify objects in the environment. A hand gesture classification algorithm is used to recognize hand-based control commands. When combining all these elements, the emerging system permits a subject to move
 freely in an environment, select the object he wants to interact with by gaze, and transmit a control command to it by performing a hand gesture. The specific object is identified by the binary beacon visible in its surface. This
 innovative HCI paradigm opens up new forms of interaction with objects in an smart environment.
+\linebreak
+\linebreak
+{\bf Keywords: Keywords: Gaze Tracking, Head-Mounted Gaze Tracker, Mobile Interaction, Gaze Interaction, HCI}}
 
-% 200 word abstract
-\linebreak \linebreak {\bf Keywords: Gaze Tracking, Head-Mounted Gaze Tracker, Mobile Interaction, Gaze Interaction, HCI}}
 \acknowledgements{}
-
 \shorttitle{Interacting with Objects in the Environment by Gaze and Hand Gestures}
 \rightheader{}
 
 % repeat the authors here (use et al if more than three authors):
-\leftheader{Author 1, Author 2, Author 3}
-
-
-
+\leftheader{ }
 
 \begin{document}
-\maketitle%\begin{center}
+\maketitle
 
 \lhead{\small
 Journal of Eye Movement Research\\
 1(1):1, 1-2
 }
 \rhead{
-One, A., Two, A., & Three, A. (2013)\\
-Interacting with Objects in the Environment by Gaze and Hand Gestures
+Author, A., Author, B., \& Author, C. (2007)\\
+Short Title
 }
 \thispagestyle{plain}
 
@@ -66,17 +63,11 @@ gaze pointing and hand gestures to interact with objects in the environment. Our
 tracker, a hand gesture classifier and a visual marker recognition module into an innovate HCI device that permits novel
 forms of interaction with electronic devices in the environment. Gaze is used as a pointing mechanism to select the
 object with which the subject wants to interact. A visual binary marker in the surface of the object is used for
-identification of the object by the system. Finally, a hand gesture is mapped to a specific control command that makes the
-object carry out a particular function.
+identification of the object by the system. Finally, a hand gesture is mapped to a specific control command that makes the object carry out a particular function.
 
 % Diako: <the following paragraph about the eye tracking should be removed>
-Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of regard
-(where a person is looking). A head mounted eye tracker is a device that permits measuring eye movement while the
-subject is moving around an environment and estimate the position of gaze in the environment. Eye trackers are used in
-research on the visual system, in psychology, in cognitive linguistics, product design and in Human Computer Interaction
-(HCI) research \cite{myiwann2011}. There are a number of methods for measuring eye movement. The most popular variant
-uses video images from which the eye position is extracted. Other methods use search coils or are based on
-electrooculography.
+Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of regard (where a person is looking). A head mounted eye tracker is a device that permits measuring eye movement while the subject is moving around an environment and estimate the position of gaze in the environment. Eye trackers are used in research on the visual system, in psychology, in cognitive linguistics, product design and in Human Computer Interaction
+(HCI) research \cite{myiwann2011}. There are a number of methods for measuring eye movement. The most popular variant uses video images from which the eye position is extracted. Other methods use search coils or are based on electrooculography.
 
 Automatic gesture recognition is a topic in computer science and language technology that strives to interpret human
 gestures via computational algorithms. Gestures can originate from any bodily motion or state but commonly originate
@@ -104,7 +95,7 @@ color not present in the environment improves performance.
 
 
 We used an open source gaze tracker, described in \cite{Mardanbegi2011}, to monitor user's gaze. The gaze tracker
-provides real-time gaze estimation over the user�s field of view, as captured by the scene camera attached to the glasses,
+provides real-time gaze estimation over the user?s field of view, as captured by the scene camera attached to the glasses,
  
 
 The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera
@@ -126,7 +117,8 @@ used to build the hardware, the low cost of building the entire system and the o
 used, make this form of interaction amenable for spreading among academic institutions and research labs to further
 investigate and stretch the possibilities of this innovative HCI paradigm.
 
-\subsection{Related Work}
+
+\section{Related Work}
 %Diako! My subsections are only a suggestion. you know better than me how to properly organize this section :)
 %Related work on mobile gaze-based interaction, and hand gesture interaction with robot
 \subsection{Head mounted eye trackers}
@@ -142,6 +134,7 @@ Please cite \cite{Rozado2012a}, \cite{mardanbegi2012eye} and \cite{Rozado2012}
 %
 \subsection{Gaze enhanced interaction }
 %Pehaps different methods or modes that has been studied in our case
+
 
 \section{Method}
 %Jeremy! My subsections are only a suggestion. you know better than me how to properly organize this section :)
@@ -213,6 +206,11 @@ Figure \ref{jeremy}
  % the label is used to put refrences to this figure in the text
  \label{gazeTrackingGlasses}
 \end{figure}
+
+
+\subsection{Apparatus}
+\subsubsection{Eye-tracking system}
+\section{Results}
 
 
 Materials:
@@ -361,10 +359,32 @@ gestures, and physiologically it is tiring and challenging to complete them. Fin
 and complex hand gestures is therefore paramount to successfully use hand gestures as a control input device.
 
 
-In summary, this work\ldots
+
+%How to insert a figure (image):
+\begin{figure}[tp]
+ %there's a figure in the same directory called "graph1.jpg"
+ \fitbitmap{figures/screenGazeTracker.jpg}
+ \caption{caption...}
+ % the label is used to put refrences to this figure in the text
+ \label{fig:fig1}
+\end{figure}
 
 
-\bibliography{library}
+%\begin{table}[tbp]
+% \caption{Some numbers that could be experimental data.}
+% \label{tab:tab1}
+% \begin{tabular}{lcc}\hline
+%           & \multicolumn{2}{c}{Factor 2} \\ \cline{2-3}
+% Factor 1  & Condition A  & Condition B   \\ \hline
+% First     & 586 (231)    & 649 (255)     \\
+%           &    2.2       &    7.5        \\
+% Second    & 590 (195)    & 623 (231)     \\
+%           &    2.8       &    2.5        \\ \hline
+% \end{tabular}
+%\end{table}
 
 
+\section{Discussion}
+%assumes that there is a biblio.bib file in the same directory
+\bibliography{biblio}
 \end{document}
