@@ -26,12 +26,9 @@ Journal of Eye Movement Research\\
 \volume{}
 
 \abstract{
-Head-mounted gaze trackers can be used for gaze estimation purposes in mobile scenarios. A wireless gaze
-tracker in the form of gaze tracking glasses permits the continuous monitoring of a subject's point of regard on the
-surrounding 3D environment. In this work, we combine gaze tracking and hand gesture recognition to allow a subject to
-interact with objects in the environment by gazing at them (pointing), and controlling the object using hand gesture commands. A set of gaze tracking glasses is made from low-cost hardware which consists of glasses' frame, eye tracking camera and the scene camera. An open source gaze estimation software is used for eye tracking and obtaining the user's gaze data. A binary beacon recognition library is used to identify objects in the environment. A hand gesture classification algorithm is used to recognize hand-based control commands. When combining all these elements, the emerging system permits a subject to move
-freely in an environment, select the object he wants to interact with by gaze, and transmit a control command to it by performing a hand gesture. The specific object is identified by the binary beacon visible in its surface. This
-innovative HCI paradigm opens up new forms of interaction with objects in an smart environment.
+Head-mounted gaze trackers can be used for gaze estimation purposes in mobile scenarios. A wireless gaze tracker in the form of gaze tracking glasses permits the continuous monitoring of a subject's point of regard on the surrounding 3D environment. In this work, we combine gaze tracking and hand gesture recognition to allow a subject to interact with objects in the environment by gazing at them (pointing), and controlling the object using hand gesture commands. A set of gaze tracking glasses is made from low-cost hardware which consists of glasses' frame, eye tracking camera and the scene camera. An open source gaze estimation software is used for eye tracking and obtaining the user's gaze data. A binary beacon recognition library is used to identify objects in the environment. A hand gesture classification algorithm is used to recognize hand-based control commands. When combining all these elements, the emerging system permits a subject to move freely in an environment, select the object he wants to interact with by gaze, and transmit a control command to it by performing a hand gesture. 
+%specific object is identified by the binary beacon visible in its surface. 
+ This innovative HCI paradigm opens up new forms of interaction with objects in an smart environment.
 \linebreak
 \linebreak
 {\bf Keywords: Keywords: Gaze Tracking, Head-Mounted Gaze Tracker, Mobile Interaction, Gaze Interaction, HCI}}
@@ -57,84 +54,50 @@ Short Title
 \thispagestyle{plain}
 
 \section{Introduction} 
-% We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and
-% gaze in a mobile situation for controlling a robot.
-Body language and gaze are important forms of communication among humans. In this work we present a system that combines
-gaze pointing and hand gestures to interact with objects in the environment. Our system merges a video-based gaze
-tracker, a hand gesture classifier and a visual marker recognition module into an innovate HCI device that permits novel
-forms of interaction with electronic devices in the environment. Gaze is used as a pointing mechanism to select the
-object with which the subject wants to interact. A visual binary marker in the surface of the object is used for
-identification of the object by the system. Finally, a hand gesture is mapped to a specific control command that makes the object carry out a particular function.
+% We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and gaze in a mobile situation for controlling a robot.
+Body language and gaze are important forms of communication among humans. In this work we present a system that combines gaze pointing and hand gestures to interact with objects in the environment. Our system merges a video-based gaze tracker, a hand gesture classifier and a visual marker recognition module into an innovate HCI device that permits novel forms of interaction with electronic devices in the environment. Gaze is used as a pointing mechanism to select the object with which the subject wants to interact. A visual binary marker attached to the object is used for identification of the object by the system. Finally, a hand gesture is mapped to a specific control command that makes the object carry out a particular function.
+
+Using gaze for interaction with computers was initiated in the early 1980’s [Bolt, 1982] and further developed by [Ware 1987]. Today, gaze interaction is mostly done using a remote eye tracker with a single user sitting in front of a computer display. However, the head-mounted gaze trackers (HMGT) allow for a higher degree of mobility and flexibility, where the eye tracker is mounted on the user and thus allows gaze to be estimated when e.g. walking and driving. HMGT systems are commonly used for estimating the gaze point of the user in his field of view. However, the point of regard (PoR) obtained by head-mounted gaze trackers can be used for interaction with many different types of objects present in our daily activities in 3D environments. There have been some work done on using gaze for interaction with computers in the mobile scenarios using head-mounted gaze trackers [Mardanbegi]. Despite the fact that gaze can be used as a mechanism for pointing in many interactive applications, eye information has been shown to be limited for inter- action. Point of regard can be used for pointing, but not for yielding any additional commands. The main reason is that it is unnatural to overload a perceptual channel such as vision with a motor control task [Zhai, Morimoto, Ihde 1999]. Therefore, other interaction modalities such as body gestures and speech together with gaze can be used for enhancing the gaze-based interaction with computer and also with the environment. 
+%the last sentence above should be corrected
+ In this paper, we use the hand gestures for enhancing the gaze interaction in a fully mobile scenario . 
+ 
+ Automatic gesture recognition is a topic in computer science and language technology that strives to interpret human gestures via computational algorithms. Gestures can originate from any bodily motion or state but commonly originate from the face or hands. An appealing feature of gestural interfaces is that they make it possible for users to communicate with objects without the need for external control devices. Hand gestures are an obvious choice as a mechanism to interact with objects in the environment \cite{Rozado2012b,myicann2010}. Automated hand gesture recognition is challenging since in order for such an approach to represent a serious alternative to conventional input devices, applications based on computer vision should be able to work successfully under uncontrolled light conditions, backgrounds and perspectives. In addition, deformable and articulated objects like hands represent added difficulty both for segmentation and shape recognition purposes. This paper dose not contribute in the hand gesture recognition, but suggests the combination of gaze and hand gestures as an alternative to the conventional methods that are used for gaze interaction such as: blinking (e.g., [MacKenzie 2008]), dwelling (e.g., [Jacob 1990]), and gaze gesture (e.g., [isokosi 2000]). We use the scene image of the HMGT system for recognizing the hand gestures and for recognizing the visual markers attached to the gazed objects. The hand gesture recognition module we developed here is able to detect a hand in front of the scene camera of the HMGT and the number of fingers that the hand is holding up. 
+ 
+ In Summary, this work represents a proof of concept for an innovative form of interacting with objects in the environment by combining gaze and hand gestures. Interaction is achieved by gazing at an object in the environment and carrying out a hand gesture. The hand gesture specifies a certain command and gazing at the object, and the visual marker associated to it, make only that specific object to respond to the subsequent hand gesture. The off-the-shelf components used to build the hardware, the low cost of building the entire system and the open source nature of the algorithms used, make this form of interaction amenable for spreading among academic institutions and research labs to further investigate and stretch the possibilities of this innovative HCI paradigm.
+
+The remaining paper is structured as follows. First...XXXX
+
 
 % Diako: <the following paragraph about the eye tracking should be removed>
-Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of regard (where a person is looking). A head mounted eye tracker is a device that permits measuring eye movement while the subject is moving around an environment and estimate the position of gaze in the environment. Eye trackers are used in research on the visual system, in psychology, in cognitive linguistics, product design and in Human Computer Interaction
-(HCI) research \cite{myiwann2011}. There are a number of methods for measuring eye movement. The most popular variant uses video images from which the eye position is extracted. Other methods use search coils or are based on electrooculography.
-
-Automatic gesture recognition is a topic in computer science and language technology that strives to interpret human
-gestures via computational algorithms. Gestures can originate from any bodily motion or state but commonly originate
-from the face or hands. An appealing feature of gestural interfaces is that they make it possible for users to
-communicate with objects without the need for external control devices. Hand gestures are an obvious choice as a
-mechanism to interact with objects in the environment \cite{Rozado2012b,myicann2010}.
-
-Automated hand gesture recognition is challenging since in order for such an approach to represent a serious alternative
-to conventional input devices, applications based on computer vision should be able to work successfully under
-uncontrolled light conditions, backgrounds and perspectives. In addition, deformable and articulated objects like hands
-represent added difficulty both for segmentation and shape recognition purposes.
-
-Visual marker recognition systems consist of a set of patterns that can be detected by a computer equipped with a camera
-and an appropriate detection algorithm \cite{middel19detection}. Markers placed in the environment provide easily
-detectable visual cues that can be associated to specific objects for identification purposes. In this work, we use the
-open source library XXXXXXXXXXXXXXXXX FOR DIAKO TO FILL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. This library provides our
-system with the ability to recognize specific objects in the environment.
+%Eye tracking refers to the monitoring of eye movements. Gaze tracking is the process of measuring the point of regard (where a person is looking). A head mounted eye tracker is a device that permits measuring eye movement while the subject is moving around an environment and estimate the position of gaze in the environment. Eye trackers are used in research on the visual system, in psychology, in cognitive linguistics, product design and in Human Computer Interaction
+%(HCI) research \cite{myiwann2011}. There are a number of methods for measuring eye movement. The most popular variant uses video images from which the eye position is extracted. Other methods use search coils or are based on electrooculography.
 
 
-The hand gesture recognition module we developed here is able to detect a hand in front of the scene camera of the gaze
-tracking glasses and the number of fingers that the hand is holding up. We define the gesture
-as holding the hand with a preset number of fingers for a predefined dwell time of 1 second and moving it in a particular direction:
-up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a
-color not present in the environment improves performance.
-
-
-We used an open source gaze tracker, described in \cite{Mardanbegi2011}, to monitor user's gaze. The gaze tracker
-provides real-time gaze estimation over the user?s field of view, as captured by the scene camera attached to the glasses,
- 
-
-The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera
-also referred to here as field of view camera. When the subject carrying the glasses gazes at an object, the visual
-marker placed nearby is recognized by the visual marker recognition library operating over the scene camera video stream.
-When a visual marker has been detected, a temporal window opens for detection of a hand gesture on the part of the user. 
-
-
-To interact with an object in the environment, the user of the glasses needs to first look at the visual marker
-associated to the object that identifies the object and then perform the hand gesture. In this way, only that particular
-object in the environment will react to the hand gesture.
-
-
-In Summary, this work represents a proof of concept for an innovative form of interacting with objects in the
-environment by combining gaze and hand gestures. Interaction is achieved by gazing at an object in the environment and
-carrying out a hand gesture. The hand gesture specifies a certain command and gazing at the object, and the visual
-marker associated to it, make only that specific object to respond to the subsequent hand gesture. The off-the-shelf components
-used to build the hardware, the low cost of building the entire system and the open source nature of the algorithms
-used, make this form of interaction amenable for spreading among academic institutions and research labs to further
-investigate and stretch the possibilities of this innovative HCI paradigm.
 
 
 \section{Related Work}
 %Diako! My subsections are only a suggestion. you know better than me how to properly organize this section :)
 %Related work on mobile gaze-based interaction, and hand gesture interaction with robot
-\subsection{Head mounted eye trackers}
-%Citing the papers from Diako on this subject
 
-\subsection{Gaze for Interaction}
-\subsection{Gestures in HCI}
-Please cite \cite{Rozado2012a}, \cite{mardanbegi2012eye} and \cite{Rozado2012} 
+Mardanbegi et. al [] presented a method for measuring the head gestures by the eye trackers. They applied their method for controlling the objects in the environment by gazing at objects and performing a head gesture. In their implementation for the head-mounted eye trackers they used the scene image for recognizing the objects and also to ensure that the PoR is on the object during the gesture. In contrast, in this paper, we have used the hand gestures and gaze as a multimodal choice for interaction. In this paper, we have used the information provided by the cameras of the head-mounted eye tracker for measuring the hand gestures. 
 
-\subsection{Combining gaze and gesture}
-%methods and limitations
-\subsection{Gesture for Interaction}
+
+%There has been substantial research in hand/body gesture in for human-computer interaction. Lenman et al. explored the use of pie- and marking menus in hand gesture-based interaction[12].
+
+
+
 %
-\subsection{Gaze enhanced interaction }
-%Pehaps different methods or modes that has been studied in our case
+%\subsection{Head mounted eye trackers}
+%%Citing the papers from Diako on this subject
+\subsection{Gestures in HCI}
+%Please cite \cite{Rozado2012a}, \cite{mardanbegi2012eye} and \cite{Rozado2012} 
+%
+\subsection{Mobile Gaze Enhanced Interaction}
+
+%the paragraphs below  should go to the implementation section 
+ %We define the gesture as holding the hand with a preset number of fingers for a predefined dwell time of 1 second and moving it in a particular direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a color not present in the environment improves performance.
+%Visual marker recognition systems consist of a set of patterns that can be detected by a computer equipped with a camera and an appropriate detection algorithm \cite{middel19detection}. Markers placed in the environment provide easily detectable visual cues that can be associated to specific objects for identification purposes. In this work, we use the open source library XXXXXXXXXXXXXXXXX FOR DIAKO TO FILL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. This library provides our system with the ability to recognize specific objects in the environment.
+%We used an open source gaze tracker, described in \cite{Mardanbegi2011}, to monitor user's gaze. The gaze tracker provides real-time gaze estimation over the user?s field of view, as captured by the scene camera attached to the glasses,The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera also referred to here as field of view camera. When the subject carrying the glasses gazes at an object, the visual marker placed nearby is recognized by the visual marker recognition library operating over the scene camera video stream. When a visual marker has been detected, a temporal window opens for detection of a hand gesture on the part of the user. To interact with an object in the environment, the user of the glasses needs to first look at the visual marker associated to the object that identifies the object and then perform the hand gesture. In this way, only that particular object in the environment will react to the hand gesture.
 
 
 \section{Method}
@@ -389,3 +352,8 @@ and complex hand gestures is therefore paramount to successfully use hand gestur
 %assumes that there is a biblio.bib file in the same directory
 \bibliography{biblio,library}
 \end{document}
+
+% Bolt, R.A. 1982. Eyes at the Interface. In Proc. of Human Factors in Computer Systems Conference, 360-362.
+% Ware, C. and Mikaelian, H.T. 1987. An evaluation of an eye tracker as a device for computer input. In Proc. of the ACM CHI + GI-87 Human Factors in Computing Systems Conference, 183-188.
+%MacKenzie, I. S., & Zhang, X. (2008). Eye typing using word and letter prediction and a ﬁxation algorithm. In ETRA ’08: Proceedings of the 2008 symposium on Eye tracking research & applications
+% Isokoski, P. 2000. Text Input Methods for Eye Trackers Using Off-Screen Targets. In Proceedings of the ACM symposium on Eye tracking research & applications ETRA '00. ACM Press.
