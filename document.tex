@@ -57,7 +57,7 @@ Short Title
 % We should clearify that this paper does not contribute in the hand gesture recognition but it uses the gesture and gaze in a mobile situation for controlling a robot.
 Body language and gaze are important forms of communication among humans. In this work we present a system that combines gaze pointing and hand gestures to interact with objects in the environment. Our system merges a video-based gaze tracker, a hand gesture classifier and a visual marker recognition module into an innovate HCI device that permits novel forms of interaction with electronic devices in the environment. Gaze is used as a pointing mechanism to select the object with which the subject wants to interact. A visual binary marker attached to the object is used for identification of the object by the system. Finally, a hand gesture is mapped to a specific control command that makes the object carry out a particular function.
 
-Using gaze for interaction with computers was initiated in the early 1980’s [Bolt, 1982] and further developed by [Ware 1987]. Today, gaze interaction is mostly done using a remote eye tracker with a single user sitting in front of a computer display. However, the head-mounted gaze trackers (HMGT) allow for a higher degree of mobility and flexibility, where the eye tracker is mounted on the user and thus allows gaze to be estimated when e.g. walking and driving. HMGT systems are commonly used for estimating the gaze point of the user in his field of view. However, the point of regard (PoR) obtained by head-mounted gaze trackers can be used for interaction with many different types of objects present in our daily activities in 3D environments. There have been some work done on using gaze for interaction with computers in the mobile scenarios using head-mounted gaze trackers [Mardanbegi]. Despite the fact that gaze can be used as a mechanism for pointing in many interactive applications, eye information has been shown to be limited for inter- action. Point of regard can be used for pointing, but not for yielding any additional commands. The main reason is that it is unnatural to overload a perceptual channel such as vision with a motor control task [Zhai, Morimoto, Ihde 1999]. Therefore, other interaction modalities such as body gestures and speech together with gaze can be used for enhancing the gaze-based interaction with computer and also with the environment. 
+Using gaze for interaction with computers was initiated in the early 1980â€™s [Bolt, 1982] and further developed by [Ware 1987]. Today, gaze interaction is mostly done using a remote eye tracker with a single user sitting in front of a computer display. However, the head-mounted gaze trackers (HMGT) allow for a higher degree of mobility and flexibility, where the eye tracker is mounted on the user and thus allows gaze to be estimated when e.g. walking and driving. HMGT systems are commonly used for estimating the gaze point of the user in his field of view. However, the point of regard (PoR) obtained by head-mounted gaze trackers can be used for interaction with many different types of objects present in our daily activities in 3D environments. There have been some work done on using gaze for interaction with computers in the mobile scenarios using head-mounted gaze trackers [Mardanbegi]. Despite the fact that gaze can be used as a mechanism for pointing in many interactive applications, eye information has been shown to be limited for inter- action. Point of regard can be used for pointing, but not for yielding any additional commands. The main reason is that it is unnatural to overload a perceptual channel such as vision with a motor control task [Zhai, Morimoto, Ihde 1999]. Therefore, other interaction modalities such as body gestures and speech together with gaze can be used for enhancing the gaze-based interaction with computer and also with the environment. 
 %the last sentence above should be corrected
  In this paper, we use the hand gestures for enhancing the gaze interaction in a fully mobile scenario . 
  
@@ -215,6 +215,27 @@ INSERT IMAGE HERE SHOWING CONVEXITY DEFECTS
 6. If the location of the end and start points satisfy the custom heuristic equation, the defect is defined as a finger.
 7. Each defect is checked and the number of fingers is therefore the total defects that satisfy the equation.
 
+Hand movement
+1. Centroid of hand contour is determined and initial boundary box is set (20x20 pixels)
+2. If centroid doesn't move outside of boundary box for 1.5 seconds it, the current position of the hand is set as the reference.
+3. A new boundary box is set (60x60 pixels).
+4. If the centroid of the hand moves outside of the box it is classified as a movement.
+5. If the centroid moves above the box it is classified as up, below the box is down, left of the box is left and right of the box is right.
+6. All the while this is happening, the program is sampling the number of fingers shown and averaging the result. This helps to eliminate
+false number of fingers identification. When a movement has happened, the averaged number of fingers is set as the final result.
+
+Client
+1. A TCP connection was set up between Haytham and the client program.
+2. The program controls an Arduino, patrol robot and computer.
+3. Arduino connects to the program via serial connection.
+4. Arduino has 3 pins connected to 3 leds on a breadboard.
+5. The hand movement 2 Up turns on all the leds and 4 Left turns them all off.
+6. Program controls computer using sendMessage function.
+7. The hand movement 2 Up minimises all applications open and 4 Left reminimises them all.
+8. The patrol robot connects to the computer using an ethernet cable.
+9. The number of fingers determines the magnitude of movement and the hand movement controls the direction of movement.
+10. e.g. 2Up will move the robot forward with a magnitude of 2. 3Left will rotate the robot anti-clockwise.
+
 % ---------------------------------------------------------------
 \subsection{Gaze Tracking Glasses}
 %Maybe Diako should take care of this subsection
@@ -355,5 +376,5 @@ and complex hand gestures is therefore paramount to successfully use hand gestur
 
 % Bolt, R.A. 1982. Eyes at the Interface. In Proc. of Human Factors in Computer Systems Conference, 360-362.
 % Ware, C. and Mikaelian, H.T. 1987. An evaluation of an eye tracker as a device for computer input. In Proc. of the ACM CHI + GI-87 Human Factors in Computing Systems Conference, 183-188.
-%MacKenzie, I. S., & Zhang, X. (2008). Eye typing using word and letter prediction and a ﬁxation algorithm. In ETRA ’08: Proceedings of the 2008 symposium on Eye tracking research & applications
+%MacKenzie, I. S., & Zhang, X. (2008). Eye typing using word and letter prediction and a ï¬�xation algorithm. In ETRA â€™08: Proceedings of the 2008 symposium on Eye tracking research & applications
 % Isokoski, P. 2000. Text Input Methods for Eye Trackers Using Off-Screen Targets. In Proceedings of the ACM symposium on Eye tracking research & applications ETRA '00. ACM Press.
