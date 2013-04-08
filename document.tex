@@ -36,8 +36,7 @@ classification algorithm is used to recognize hand-based control commands. When 
 emerging system permits a subject to move freely in an environment, select the object he wants to interact with by gaze,
 pointing part, and transmit a control command to it by performing a hand gesture. This innovative HCI paradigm opens up
 new forms of interaction with objects in a smart environment.
-\linebreak \linebreak {\bf Keywords: Keywords: Gaze Tracking, Head-Mounted Gaze Tracker, Mobile Interaction, Gaze
-Interaction, HCI}}
+\linebreak \linebreak {\bf Keywords: Keywords: Gaze Tracking, Head-Mounted Gaze Tracker, Mobile Interaction, Gaze Interaction, HCI}}
 
 \acknowledgements{}
 \shorttitle{Interacting with Objects in the Environment by Gaze and Hand Gestures}
@@ -125,8 +124,17 @@ The remaining paper is structured as follows. First...XXXX
 
 \section{Related Work}
 %Diako! My subsections are only a suggestion. you know better than me how to properly organize this section :)
-%Related work on mobile gaze-based interaction, and hand gesture interaction with robot
 
+
+\subsection{Hand gestures in HCI}
+% There has been substantial research in hand/body gesture in for human-computer interaction. Lenman et al. explored the
+% use of pie- and marking menus in hand gesture-based interaction[12].
+%Please cite \cite{Rozado2012a}, \cite{mardanbegi2012eye} and \cite{Rozado2012} 
+%
+
+
+%Related work on mobile gaze-based interaction, and hand gesture interaction with robot
+%\subsection{Mobile Gaze Enhanced Interaction}
 Mardanbegi et. al [] presented a method for measuring the head gestures by the eye trackers. They applied their method
 for controlling the objects in the environment by gazing at objects and performing a head gesture. In their
 implementation for the head-mounted eye trackers they used the scene image for recognizing the objects and also to
@@ -135,44 +143,8 @@ gaze as a multimodal choice for interaction. In this paper, we have used the inf
 head-mounted eye tracker for measuring the hand gestures.
 
 
-% There has been substantial research in hand/body gesture in for human-computer interaction. Lenman et al. explored the
-% use of pie- and marking menus in hand gesture-based interaction[12].
 
 
-
-%
-%\subsection{Head mounted eye trackers}
-%%Citing the papers from Diako on this subject
-\subsection{Gestures in HCI}
-%Please cite \cite{Rozado2012a}, \cite{mardanbegi2012eye} and \cite{Rozado2012} 
-%
-\subsection{Mobile Gaze Enhanced Interaction}
-
-%the paragraphs below  should go to the implementation section 
- %We define the gesture as holding the hand with a preset number of fingers for a predefined dwell time of 1 second and moving it in a particular direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a color not present in the environment improves performance.
-%Visual marker recognition systems consist of a set of patterns that can be detected by a computer equipped with a camera and an appropriate detection algorithm \cite{middel19detection}. Markers placed in the environment provide easily detectable visual cues that can be associated to specific objects for identification purposes. In this work, we use the open source library XXXXXXXXXXXXXXXXX FOR DIAKO TO FILL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. This library provides our system with the ability to recognize specific objects in the environment.
-%We used an open source gaze tracker, described in \cite{Mardanbegi2011}, to monitor user's gaze. The gaze tracker provides real-time gaze estimation over the user?s field of view, as captured by the scene camera attached to the glasses,The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera also referred to here as field of view camera. When the subject carrying the glasses gazes at an object, the visual marker placed nearby is recognized by the visual marker recognition library operating over the scene camera video stream. When a visual marker has been detected, a temporal window opens for detection of a hand gesture on the part of the user. To interact with an object in the environment, the user of the glasses needs to first look at the visual marker associated to the object that identifies the object and then perform the hand gesture. In this way, only that particular object in the environment will react to the hand gesture.
-
-
-\section{Method}
-%Jeremy! My subsections are only a suggestion. you know better than me how to properly organize this section :)
-
-\subsection{Gaze Tracking}
-Eyes are used by humans to obtain information about the surroundings and to communicate information. When something
-attracts our attention, we position our gaze on it, thus performing a \textit{fixation}. A fixation usually has a
-duration of at least 150 milliseconds (ms). The fast eye movements that occur between fixations are known as
-\textit{saccades}, and they are used to reposition the eye so that the object of interest is projected onto the fovea.
-The direction of gaze thus reflects the focus of \textit{attention} and also provides an indirect hint for
-\textit{intention} \cite{velichkovsky}.
-
-
-A video-based gaze tracking system seeks to find where a person is looking, i.e. the Point of Regard (PoR), using images
-obtained from the eye by one or more cameras. Most systems employ infrared illumination that is invisible to the human
-eye and hence it is not distracting for the user. Infrared light improves image contrast and produces a reflection on
-the cornea, known as corneal reflection or glint. Eye features such as the corneal reflections and the center of the
-pupil/iris can be used to estimate the PoR. Figure \ref{screenGazeTracker} shows a screenshot of an eye being tracked by
-the open-source Haytham Gaze Tracker \cite{mardanbegi2012eye}. In this case, the center of the pupil and two
-corneal reflections are the features being tracked.
 
 %How to insert a figure (image):
 \begin{figure}[tp]
@@ -183,6 +155,32 @@ used by the gaze estimation algorithms to determine the PoR of the user on the s
  % the label is used to put refrences to this figure in the text
  \label{screenGazeTracker}
 \end{figure}
+
+
+
+We use the open-source Haytham \cite{Mardanbegi2011} gaze tracker developed by Diako Mardanbegui at the IT University of
+Copenhagen for mobile gaze estimation and extended it with a hand gesture recognition module that enables specific
+interaction with objects in the environment through gaze and hand gestures.
+
+%Jeremy! My subsections are only a suggestion. you know better than me how to properly organize this section :)
+
+\section{Overview of the Method}
+
+%Do not go to the details and implementation please. Only general talk and method. 
+
+XXXXXXX Method in general (gaze + gesture + interaction)
+...The system recognizes objects in the environment by detecting visual markers associated to them through the scene camera also referred to here as field of view camera. When the subject carrying the glasses gazes at an object, the visual marker placed nearby is recognized by the visual marker recognition library operating over the scene camera video stream. When a visual marker has been detected, a temporal window opens for detection of a hand gesture on the part of the user. To interact with an object in the environment, the user of the glasses needs to first look at the visual marker associated to the object that identifies the object and then perform the hand gesture. In this way, only that particular object in the environment will react to the hand gesture.
+%good Sketch of the method here
+
+
+\subsection{Gaze Tracking}
+Eyes are used by humans to obtain information about the surroundings and to communicate information. When something
+attracts our attention, we position our gaze on it, thus performing a \textit{fixation}. A fixation usually has a
+duration of at least 150 milliseconds (ms). The fast eye movements that occur between fixations are known as
+\textit{saccades}, and they are used to reposition the eye so that the object of interest is projected onto the fovea.
+The direction of gaze thus reflects the focus of \textit{attention} and also provides an indirect hint for
+\textit{intention} \cite{velichkovsky}.
+
 
 Depending on the hardware configuration of the different components, gaze tracking systems can be classified as either
 \textit{remote} or \textit{head-mounted}. In remote systems, the camera and the light sources are detached from the
@@ -199,12 +197,55 @@ procedure consists on the user looking at a number of points on the environment 
 video stream while the user fixates on them.  Once a calibration procedure is completed, the gaze estimation algorithm
 is able to determining the point of regard of the user in the environment.
 
+A video-based gaze tracking system seeks to find where a person is looking, i.e. the Point of Regard (PoR), using images
+obtained from the eye by one or more cameras. Most systems employ infrared illumination that is invisible to the human
+eye and hence it is not distracting for the user. Infrared light improves image contrast and produces a reflection on
+the cornea, known as corneal reflection or glint. Eye features such as the corneal reflections and the center of the
+pupil/iris can be used to estimate the PoR. Figure \ref{screenGazeTracker} shows a screenshot of an eye being tracked by
+the open-source Haytham Gaze Tracker \cite{mardanbegi2012eye}. In this case, the center of the pupil and two
+corneal reflections are the features being tracked.
 
-We use the open-source Haytham \cite{Mardanbegi2011} gaze tracker developed by Diako Mardanbegui at the IT University of
-Copenhagen for mobile gaze estimation and extended it with a hand gesture recognition module that enables specific
-interaction with objects in the environment through gaze and hand gestures.
+\subsection{Hand Gesture}
 
-\subsection{Constructing the eye tracking glasses}
+ ...We define the gesture as holding the hand with a preset number of fingers for a predefined dwell time of 1 second and moving it in a particular direction: up, down, left  or right. The hand gesture recognition worked well for natural skin color, but using a latex glove of a color not present in the environment improves performance.
+\subsection{Visual Markers}
+
+...Visual marker recognition systems consist of a set of patterns that can be detected by a computer equipped with a camera and an appropriate detection algorithm \cite{middel19detection}. Markers placed in the environment provide easily detectable visual cues that can be associated to specific objects for identification purposes.
+
+
+
+
+\section{Implementation}
+\subsection{Gaze Tracking System}
+In this section, the hardware and the software of the gaze tracking module of the implementation have been introduced briefly. 
+\subsubsection{Hardware}
+:
+\\Materials:
+\\Plastic safety glasses
+Wireless camera with infra-red LEDs (eye camera)
+Wireless camera	(scene camera)
+Tin strips
+Araldite
+Steel wire
+Tape
+Double sided tape
+9V battery
+Tin snips
+
+1. An area was traced onto the lens of the glasses where the eyes will be approximately when the user puts on the safety googles. 
+2. Using the tin snips, the plastic part of the lenses bounded by the previously traced area was cut away. It is important that the
+majority of the structure of the glasses is left intact to allow for stability.
+3. Tin was cut to the size and shape of the infrared camera using the tin snips.
+4. Steel wire was cut to a size of 25cm.
+5. The steel wire was then attached to piece of tin using araldite.
+6. Using double sided tape, the tin was attached to the back of the camera.
+7. The steel wire was then bent into an 'L' shape and attached to the right side of the glasses (frame) using tape.
+8. The wires for the battery were extended and the 9V battery was attached to the left side of the glasses to ensure that the glasses
+are not unevenly balanced.
+8. Using the haytham software, the position of the camera was checked to ensure the camera feed is filming the entire eye.
+It was found that the best position of the eye is below the glasses so it doesn't obstruct the user's vision. 
+8. The scene camera was mounted to the right of side of the glasses using sticky tape.
+
 
 Figure \ref{gazeTrackingGlasses}
 
@@ -230,35 +271,15 @@ Figure \ref{jeremy}
  \label{gazeTrackingGlasses}
 \end{figure}
 
+\subsubsection{Gaze tracking software}
+...We used an open source gaze tracker, described in \cite{Mardanbegi2011}, to monitor user's gaze. The gaze tracker provides real-time gaze estimation over the user?s field of view, as captured by the scene camera attached to the glasses,
 
-\subsection{Apparatus}
-\subsubsection{Eye-tracking system}
 
-Materials:
-Plastic safety glasses
-Wireless camera with infra-red LEDs (eye camera)
-Wireless camera	(scene camera)
-Tin strips
-Araldite
-Steel wire
-Tape
-Double sided tape
-9V battery
-Tin snips
+\subsubsection{Visual Markers Recognition}
+ ...In this work, we use the open source library XXXXXXXXXXXXXXXXX FOR DIAKO TO FILL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. This library provides our system with the ability to recognize specific objects in the environment.
+This is a test Figure \ref{visualMarker}
 
-1. An area was traced onto the lens of the glasses where the eyes will be approximately when the user puts on the safety googles. 
-2. Using the tin snips, the plastic part of the lenses bounded by the previously traced area was cut away. It is important that the
-majority of the structure of the glasses is left intact to allow for stability.
-3. Tin was cut to the size and shape of the infrared camera using the tin snips.
-4. Steel wire was cut to a size of 25cm.
-5. The steel wire was then attached to piece of tin using araldite.
-6. Using double sided tape, the tin was attached to the back of the camera.
-7. The steel wire was then bent into an 'L' shape and attached to the right side of the glasses (frame) using tape.
-8. The wires for the battery were extended and the 9V battery was attached to the left side of the glasses to ensure that the glasses
-are not unevenly balanced.
-8. Using the haytham software, the position of the camera was checked to ensure the camera feed is filming the entire eye.
-It was found that the best position of the eye is below the glasses so it doesn't obstruct the user's vision. 
-8. The scene camera was mounted to the right of side of the glasses using sticky tape.
+\subsubsection{Hand gestures}
 
 Finger detection
 1. Scene camera feed is colour thresholded to check for skin colour or latex glove. For checking the skin colour the image is 
@@ -281,7 +302,11 @@ Hand movement
 6. All the while this is happening, the program is sampling the number of fingers shown and averaging the result. This helps to eliminate
 false number of fingers identification. When a movement has happened, the averaged number of fingers is set as the final result.
 
-Client
+\subsubsection{Robot}
+%Please introduce the robot here
+XXXXX Jeremy
+
+
 1. A TCP connection was set up between Haytham and the client program.
 2. The program controls an Arduino, patrol robot and computer.
 3. Arduino connects to the program via serial connection.
@@ -293,13 +318,7 @@ Client
 9. The number of fingers determines the magnitude of movement and the hand movement controls the direction of movement.
 10. e.g. 2Up will move the robot forward with a magnitude of 2. 3Left will rotate the robot anti-clockwise.
 
-% ---------------------------------------------------------------
-\subsection{Gaze Tracking Glasses}
-%Maybe Diako should take care of this subsection
 
-\subsection{Visual Markers Recognition}
-
-This is a test Figure \ref{visualMarker}
 
 \begin{figure}[tp]
  \fitbitmap{figures/visualMarker.jpg}
@@ -313,8 +332,6 @@ This is a test Figure \ref{visualMarker}
 \end{figure}
 
 
-\subsection{Hand Gesture Recognition}
-
 Figure \ref{hand}
 
 \begin{figure}[tp]
@@ -326,6 +343,9 @@ Figure \ref{hand}
 \end{figure}
 
 \subsection{Putting it all together}
+
+
+
 Figure \ref{systemDiagram}
 
 \begin{figure}[tp]
@@ -344,7 +364,7 @@ Figure \ref{systemDiagram}
  \label{systemAtWork}
 \end{figure}
 
-\section{Application}
+\section{Application Example}
 % Diako, I was wondering if we can really refer to our trials with the system as a ``pilot study''. What do you think?
 We carried out a small pilot study to test the functionality and performance of the system. We decided to test the
 system in a environment where 3 ``smart'' objects could be controlled by the system simultaneously: a computer, a set of
