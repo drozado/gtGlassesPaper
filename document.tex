@@ -14,8 +14,7 @@
 \fancypagestyle{plain}{%
 \fancyhf{} % clear all header and footer fields
 \fancyhead[L]{\small
-Journal of Eye Movement Research\\
-1(1):1, 1-2}
+ECEM 2013 Proceedings}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
@@ -23,9 +22,8 @@ Journal of Eye Movement Research\\
 \title{Interacting with Objects in the Environment by Gaze and Hand Gestures}
 
 %please refer to http://www.ilsp.gr/homepages/protopapas/apacls.html#titlhead for different numbers of authors and affiliations
-\threeauthors{First Author}{Second Author}{Third Author}
-\threeaffiliations{First affiliation}{Second Affiliation}{Third Affiliation}
-
+\threeauthors{Jeremy Hales}{David Rozado}{Diako Mardanbegi}
+\threeaffiliations{ICT Centre - CSIRO}{ICT Centre - CSIRO}{ITU Copenhagen}
 
 \journal{}
 \volume{}
@@ -42,7 +40,7 @@ system identifies the target for interaction by using visual markers. This innov
 interaction with objects in smart environments.
 \linebreak \linebreak {\bf Keywords: Eye Tracking, Gaze Tracking, Head-Mounted Gaze Tracker, Eye Tracking Glasses, Mobile Interaction, Hand Gestures, Gaze Interaction, HCI, Gaze Aware Systems, Gaze Responsive Interface, Mobile Interaction}}
 
-\acknowledgements{}
+\acknowledgements{This paper has been possible thanks to the CSIRO ICT Centre Undergraduate Vacation Scholarships Program. Corresponding author: jeremy.hales1@gmail.com}
 \shorttitle{Interacting with Objects in the Environment by Gaze and Hand Gestures}
 \rightheader{}
 
@@ -53,12 +51,11 @@ interaction with objects in smart environments.
 \maketitle
 
 \lhead{\small
-Journal of Eye Movement Research\\
-1(1):1, 1-2
+ECEM 2013 Proceedings\\
 }
 \rhead{
-Author, A., Author, B., \& Author, C. (2007)\\
-Short Title
+Hales, J., Rozado, D., \& Mardanbegi, D. (2013)\\
+Interacting with the Environment by Gaze and Hand Gestures
 }
 \thispagestyle{plain}
 
@@ -104,7 +101,7 @@ gestures enhances the interaction possibilities in a fully mobile scenario.
  marker associated to it, make only that specific object to respond to the subsequent hand gesture. The low cost off-the-shelf
  components used to build the hardware, and the open source nature of the algorithms used for gaze estimation and object recognition, make this form of interaction amenable for spreading among academic institutions and research labs to further investigate and stretch the possibilities of this innovative HCI paradigm.
 
-The remaining of the paper is structured as follows. The \emph{Related Work} section provides an overview of the literature on the topic of gaze and mobile interaction. The \emph{System Overview} section delineates the main components of the system and their mutual interactions. The \emph{Implementation} Section goes into a detailed description of each of the system's components. The \emph{Application Example} Section describes a particular instantiation of our system to control 3 objects in an environment: an arduino board, a computer and a robot. Finally, the \emph{Discussion and Conclusion} Section ellaborates in some of the issues we have found when trying out the proposed gaze and hand gestures based interaction as well as pointing out possible future research venues to continue exploring the innovative interaction modality proposed here.
+The remaining of the paper is structured as follows. The \emph{Related Work} section provides an overview of the literature on the topic of gaze and mobile interaction. The \emph{System Overview} section delineates the main components of the system and their mutual interactions. The \emph{Implementation} Section goes into a detailed description of each of the system's components. The \emph{Application Example} Section describes a particular instantiation of our system to control 3 objects in an environment: an Arduino board, a computer and a robot. Finally, the \emph{Discussion and Conclusion} Section elaborates in some of the issues we have found when trying out the proposed gaze and hand gestures based interaction as well as pointing out possible future research venues to continue exploring the innovative interaction modality proposed here.
 
 
 % Diako: <the following paragraph about the eye tracking should be removed> Eye tracking refers to the monitoring of eye
@@ -161,7 +158,7 @@ used by the gaze estimation algorithms to determine the PoR of the user on the s
 
 %-------- Method in general (gaze + gesture + interaction)
 In this section, different steps of the interaction process are introduced and the main elements of the system are described. 
-In our system, a head-mounted gaze tracker estimates the gaze point in the user's field of view using an eye tracking camera and an scene camera. A simple method for recognizing the objects in the environment is used by detecting visual markers associated to them through the scene camera. When the subject carrying the gaze tracker looks at an object, the visual marker placed on the object is recognized by the system. When a visual marker has been detected, the hand gesture recognition algorithm will be activated in the scene image (for a short period of time) to detect the potential hand gesture that might be generated shortly after. A control command, associated to a specific hand gesture, will be send to the object if the gesture is detected. In this way, only that particular object in the environment gazed at will react to the hand gesture, while the rest of the objects in the environment subsceptible to be controlled by gaze remain unresponsive.
+In our system, a head-mounted gaze tracker estimates the gaze point in the user's field of view using an eye tracking camera and an scene camera. A simple method for recognizing the objects in the environment is used by detecting visual markers associated to them through the scene camera. When the subject carrying the gaze tracker looks at an object, the visual marker placed on the object is recognized by the system. When a visual marker has been detected, the hand gesture recognition algorithm will be activated in the scene image (for a short period of time) to detect the potential hand gesture that might be generated shortly after. A control command, associated to a specific hand gesture, will be send to the object if the gesture is detected. In this way, only that particular object in the environment gazed at will react to the hand gesture, while the rest of the objects in the environment susceptible to be controlled by gaze remain unresponsive.
 
 %good Sketch of the method here
 The main hardware components of the system are introduced below:
@@ -201,7 +198,7 @@ The gesture alphabet can be named using a combination of the number of fingers h
 
 \section{Implementation}
 
-The presented method has been implemented in a real scenario for controlling a remote robot, an arduino, and a computer display. In this section, implementation and the hardware/software components of the system are introduced briefly. 
+The presented method has been implemented in a real scenario for controlling a remote robot, an Arduino, and a computer display. In this section, implementation and the hardware/software components of the system are introduced briefly. 
 
 \subsection{Gaze Tracking System}
 
@@ -213,7 +210,7 @@ The presented method has been implemented in a real scenario for controlling a r
 
 \begin{figure}[tp]
  \includegraphics[width=0.5 \textwidth]{jeremy.jpg}
- \caption{\textbf{Low Cost Gaze Tracking Glasses On a Subject.} This figure shows how the low-cost headmounted gaze
+ \caption{\textbf{Low Cost Gaze Tracking Glasses On a Subject.} This figure shows how the low-cost head-mounted gaze
  tracking system looks while being used by a subject.}
  \label{jeremy}
 \end{figure}
@@ -225,16 +222,16 @@ the cornea, known as corneal reflection or glint. A calibration procedure needs 
 
 \subsubsection{Making the head-mounted eye tracker glasses}\hspace{0pt} \\
 
-Figure \ref{gazeTrackingGlasses} shows a prototype of the eye tracking glasses built for this work. An area was traced onto the lens of a pair of safety glasses where the eyes will be approximately located when the user puts on the glasses. Tin snips were used to cut away the plastic parts of the lenses bounded by the previously traced areas. It is important that the majority of the lenses of the glasses is left intact to preserve the structural integrity of the frame. Tin was cut to the size and shape of the infrared camera using the tin snips. Steel wire was used to attach the camera to the frame of the glasses. The wire was cut to a size of 25cm and attached to the piece of tin using araldite. Double sided tape was used to secure the tin to the back of the camera. The wire was bent into an 'L' shape and firmly attached to the right hand side of the glasses (frame) using tape. The infrared camera runs on a 9V battery that also needed to be mounted to the glasses. The connecting wires from the battery to the camera were extended and the battery was attached to the left hand side of the glasses. This distributes the weight of the components over the frame. Utilising the haytham software, the position of the camera was checked to ensure the camera was capturing the entire eye. It was found that the best poisition of the eye camera is below the glasses so it doesn't obstruct the user's vision. The scene camera was firmly mounted to the right side of the glasses using tape as close as possible to the eye tracking camera in order to minimize the parallax error, see Figure \ref{jeremy}.
+Figure \ref{gazeTrackingGlasses} shows a prototype of the eye tracking glasses built for this work. An area was traced onto the lens of a pair of safety glasses where the eyes will be approximately located when the user puts on the glasses. Tin snips were used to cut away the plastic parts of the lenses bounded by the previously traced areas. It is important that the majority of the lenses of the glasses is left intact to preserve the structural integrity of the frame. Tin was cut to the size and shape of the infrared camera using the tin snips. Steel wire was used to attach the camera to the frame of the glasses. The wire was cut to a size of 25cm and attached to the piece of tin using araldite. Double sided tape was used to secure the tin to the back of the camera. The wire was bent into an 'L' shape and firmly attached to the right hand side of the glasses (frame) using tape. The infrared camera runs on a 9V battery that also needed to be mounted to the glasses. The connecting wires from the battery to the camera were extended and the battery was attached to the left hand side of the glasses. This distributes the weight of the components over the frame. Utilising the Haytham software, the position of the camera was checked to ensure the camera was capturing the entire eye. It was found that the best position of the eye camera is below the glasses so it doesn't obstruct the user's vision. The scene camera was firmly mounted to the right side of the glasses using tape as close as possible to the eye in order to minimize the parallax error, see Figure \ref{jeremy}.
 
 \subsubsection{Gaze tracking software}\hspace{0pt} \\
-We used the Haytham\footnote{\url{http://itu.dk/research/eye/}} open source gaze tracker to monitor user's gaze. The Haytham gaze tracker provides real-time gaze estimation in the scene image as well as visual marker recognition in the scene camera video stream. Figure \ref{visualMarker} shows a recognized marker from the scene video stream and the gaze point measured by the gaze tracker represented as a crosshair. 
+We used the Haytham\footnote{\url{http://itu.dk/research/eye/}} open source gaze tracker to monitor user's gaze. The Haytham gaze tracker provides real-time gaze estimation in the scene image as well as visual marker recognition in the scene camera video stream. Figure \ref{visualMarker} shows a recognized marker from the scene video stream and the gaze point measured by the gaze tracker represented as a cross hair. 
 
 \subsection{Implementing hand gestures recognition}
 
 \begin{figure}[tp]
  \includegraphics[width=0.5 \textwidth]{visualMarker.jpg}
- \caption{\textbf{Visual Marker Recognition.} The Hayhtham gaze tracker uses the Aforge glyph processing library (GRATF) for visual marker recognition in the scene image. This figure shows the identified marker and the user's gaze point (crosshair) in the scene image. When a subject position  its gaze  on a visual marker that identifies an object, the system interprets this as a pointing action and sends the subsequent recognized hand gestures to the  specific object represented by the visual marker.}
+ \caption{\textbf{Visual Marker Recognition.} The Hayhtham gaze tracker uses the Aforge glyph processing library (GRATF) for visual marker recognition in the scene image. This figure shows the identified marker and the user's gaze point (cross hair) in the scene image. When a subject position  its gaze  on a visual marker that identifies an object, the system interprets this as a pointing action and sends the subsequent recognized hand gestures to the  specific object represented by the visual marker.}
  % the label is used to put refrences to this figure in the text
  \label{visualMarker}
 \end{figure}
@@ -248,7 +245,7 @@ We used the Haytham\footnote{\url{http://itu.dk/research/eye/}} open source gaze
 \end{figure}
 
 \subsubsection{Static hand gesture recognition algorithm}\hspace{0pt} \\
-Open source hand gesture recognition software developed by Luca Del Tongo (available at http://blogs.ugidotnet.org/wetblog/Default.aspx) was modified for use in detecting the number of fingers raised by the hand. There are two options for analysing the images captured by the scene camera: colour or skin detection. To detect the skin of the hand the image was transformed to the Ycc colour space; upper and lower bounds were set for the Cr and Cb channels. To detect a coloured latex glove, the image was transformed to the HSV colour space; upper and lower bounds were set for the hue and saturation channels. Pixels that satisfied the bounding conditions are identified as potential sections of the hand. Two measures were implemented to reduce false detection caused by noise or objects with similar colours to skin or the coloured gloves. The blob with the largest contour area is designated as the hand and all blobs that are lower than a set area are removed from the image, including the blob that has been designated as the hand. This removes the possibility that small blobs (noise) are identified as the hand of the user. The convex hull is extracted from the hand and the convexity defects are determined (Figure \ref{hand}). Two parameters of the defects were used; the start and the end points are the points on the hull that mark where the defect starts and end. Three conditions were defined to determine whether a defect is a raised finger. They are: the start point of a defect must be higher than the end point, either the start or end points must be higher than the centre of the hand and the magnitude of the start and end points must be greater than the scaled down length of the hand. Each defect is checked and the total number of fingers identified is the sum of defects that satisfy the aforementioned conditions. The conditions used were from 
+An open source hand gesture recognition software\footnote{\url{http://blogs.ugidotnet.org/wetblog/Default.aspx}} developed by Luca Del Tongo was modified for use in detecting the number of fingers raised by the hand. There are two options for analysing the images captured by the scene camera: colour or skin detection. To detect the skin of the hand the image was transformed to the Ycc colour space; upper and lower bounds were set for the Cr and Cb channels. To detect a coloured latex glove, the image was transformed to the HSV colour space; upper and lower bounds were set for the hue and saturation channels. Pixels that satisfied the bounding conditions are identified as potential sections of the hand. Two measures were implemented to reduce false detection caused by noise or objects with similar colours to skin or the coloured gloves. The blob with the largest contour area is designated as the hand and all blobs that are lower than a set area are removed from the image, including the blob that has been designated as the hand. This removes the possibility that small blobs (noise) are identified as the hand of the user. The convex hull is extracted from the hand and the convexity defects are determined (Figure \ref{hand}). Two parameters of the defects were used; the start and the end points are the points on the hull that mark where the defect starts and end. Three conditions were defined to determine whether a defect is a raised finger. They are: the start point of a defect must be higher than the end point, either the start or end points must be higher than the centre of the hand and the magnitude of the start and end points must be greater than the scaled down length of the hand. Each defect is checked and the total number of fingers identified is the sum of defects that satisfy the aforementioned conditions. 
 
 \subsubsection{Dynamic hand gesture recognition algorithm}\hspace{0pt} \\
 The centroid of the hand contour is determined and an initial boundary box of size 20x20 pixels set. If the centroid doesn't move outside of the boundary box for 1.5 seconds, the current position of the hand is identified as the reference point and a new boundary box of size 60x60 pixels is set. If the centroid of the hand moves outside of the box it is classified as a movement. The location of the centroid when it moves outside the box designated the direction of movement: above the box is up, below the box is down, left of the box is left and right of the box is right. The program samples and averages the number of fingers shown. This helps to eliminate false identification of the number of fingers due to noise. When a movement is identified, the average number of fingers is sent to the client with the direction of movement.
@@ -256,9 +253,9 @@ The centroid of the hand contour is determined and an initial boundary box of si
 \subsection{Clients}
 A client program was developed to communicate with the devices in the environment. The program connects to the server (Haytham) using the TCP/IP protocol. Haytham sends commands to the client detailing specifics such as: the marker that has been recognised, the number of fingers raised and the direction of movement of the hand. 
 
-The proposed method is used for controlling a patrol robot, controlling an arduino, and for interaction with a computer display (Figure \ref{systemDiagram}) as described below.
+The proposed method is used for controlling a patrol robot, controlling an Arduino, and for interaction with a computer display (Figure \ref{systemDiagram}) as described below.
 
-The patrol robot connects to the computer using an ethernet cable. The number of fingers determines the magnitude of movement and the hand movement controls the direction of movement (e.g. 2Up will move the robot forward with a magnitude of 2 and 3Left will rotate the robot counter-clockwise). An arduino is connected to the client program via serial connection and is used to control 3 leds on a breadboard. The interaction with the computer display is done by minimizing or maximizing the windows in the display through use of the sendMessage function.
+The patrol robot connects to the computer using an Ethernet cable. The number of fingers determines the magnitude of movement and the hand movement controls the direction of movement (e.g. 2Up will move the robot forward with a magnitude of 2 and 3Left will rotate the robot counter-clockwise). An Arduino is connected to the client program via serial connection and is used to control 3 leds on a breadboard. The interaction with the computer display is done by minimizing or maximizing the windows in the display through use of the sendMessage function.
 %I don't think the next lines are neccessary here since we say the same in the application section, and that is a section where we have little "meat" to show, so I would rather 
 %The hand movement 2Up turns on all the leds and 4Left turns them all off.
 %The hand movement 2Up minimises all applications open and 4Left reminimises them all.
@@ -306,7 +303,7 @@ In this work we have shown how to interact with objects in the environment throu
 hand gestures using a set of gaze tracking glasses and a hand gesture recognition module. The method is easily
 extensible to multiple objects in the environment and to a wide array of hand gestures.
 
-The low-cost headmounted eye tracker used and the gaze estimation algorithms employed do not compensate for parallax
+The low-cost head-mounted eye tracker used and the gaze estimation algorithms employed do not compensate for parallax
 error, i.e. the inability to differentiate between the working plane and the calibration plane
 \cite{mardanbegi2012parallax}. This limits the ability to alternate interaction with objects at a distance and objects
 up close. Nonetheless, since the scene camera used in the glasses is relatively close to the eye being tracked, see Figure
@@ -337,7 +334,7 @@ Further work should strive to carry out an extensive quantitative analysis of th
 large user study and in comparison to alternative modalities of gestures based interaction with objects in the environment through gaze alone, gaze and voice, and gaze and head gestures. 
 
 
-More shopisticated hand gestures that the ones described here can also be envisioned. However, complex gaze gestures generate a
+More sophisticated hand gestures that the ones described here can also be envisioned. However, complex gaze gestures generate a
 cognitive and physiological load on the user. Cognitively it is difficult for users to remember a large set of complex
 gestures, and physiologically it is tiring and challenging to complete them. Finding the right trade-off between simple
 and complex hand gestures is therefore paramount to successfully use hand gestures as a control input device.
